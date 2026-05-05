@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Mathematics — FSc Pre-Engineering Part I</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --rule: #cfcfcf;
+    --accent: #0b5394;
+    --soft-bg: #f6f6f4;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+    margin: 0;
+    padding: 2.5rem clamp(1rem, 5vw, 4rem);
+    font-family: "Source Serif Pro", "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    background: #fdfdfb;
+    line-height: 1.55;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.rtl {
+    direction: rtl;
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Urdu Typesetting",
+                 "Arial Unicode MS", serif;
+    font-size: 1.15rem;
+    line-height: 2.1;
+}
+
+.crumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+.crumb a { color: var(--accent); text-decoration: none; }
+.crumb a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5 {
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+}
+
+body.rtl h1, body.rtl h2, body.rtl h3, body.rtl h4 {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Arial Unicode MS", serif;
+}
+
+h1 { font-size: 2rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.4rem; }
+h2 { font-size: 1.45rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; color: var(--accent); }
+
+p, ul, ol { margin: 0.6rem 0; }
+
+ul, ol { padding-left: 1.6rem; }
+body.rtl ul, body.rtl ol { padding-right: 1.6rem; padding-left: 0; }
+
+li { margin: 0.3rem 0; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+body.rtl table { font-size: 1.05rem; }
+
+th, td {
+    border: 1px solid var(--rule);
+    padding: 0.55rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+body.rtl th, body.rtl td { text-align: right; }
+
+th {
+    background: var(--soft-bg);
+    font-weight: 600;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+body.rtl th {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", serif;
+}
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1rem 0;
+    padding: 0.6rem 1rem;
+    background: var(--soft-bg);
+    color: var(--ink);
+    font-style: italic;
+}
+
+body.rtl blockquote {
+    border-left: none;
+    border-right: 3px solid var(--accent);
+}
+
+code {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.05rem 0.35rem;
+    font-family: "JetBrains Mono", "Consolas", monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+pre code { background: none; border: none; padding: 0; }
+
+hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2rem 0;
+}
+
+a { color: var(--accent); }
+
+/* Exam-paper specific look for model papers */
+body.exam .crumb { border-bottom: 2px solid var(--ink); }
+body.exam h1 { text-align: center; border-bottom: none; }
+body.exam h1 + p { text-align: center; font-weight: 600; margin-top: -0.4rem; }
+
+/* Cover sheet table for the exam header (Roll No, Time, Marks) */
+body.exam table:first-of-type {
+    border: 2px solid var(--ink);
+    margin-bottom: 1.5rem;
+}
+body.exam table:first-of-type th,
+body.exam table:first-of-type td {
+    border: 1px solid var(--ink);
+}
+
+/* Print rules */
+@media print {
+    body {
+        padding: 1cm 1.5cm;
+        background: white;
+        max-width: none;
+    }
+    .crumb { display: none; }
+    h1 { page-break-before: avoid; }
+    h2 { page-break-after: avoid; }
+    table, blockquote, pre { page-break-inside: avoid; }
+    body.exam h2 { page-break-before: auto; }
+    a { color: var(--ink); text-decoration: none; }
+}
+
+@page {
+    size: A4;
+    margin: 1.5cm 1.7cm;
+}
+</style>
+</head>
+<body class="">
+<div class="crumb">
+  <span><a href="../README.html">11th Class Prep Guide</a> &rsaquo; Mathematics</span>
+  <span>BISE Abbottabad &middot; FSc Pre-Engineering</span>
+</div>
+<h1>Mathematics — FSc Pre-Engineering Part I</h1>
+<p>KPTBB / BISE Abbottabad · 14 chapters · 100 marks · 3 hours</p>
+<h2>Paper pattern at a glance</h2>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Marks</th>
+<th>What's asked</th>
+<th>Attempt rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A — MCQs</td>
+<td>20 × 1 = 20</td>
+<td>One mark each, four options</td>
+<td>All compulsory</td>
+</tr>
+<tr>
+<td>B — Short Response</td>
+<td>~21 × 4 = (40 chosen)</td>
+<td>Two-step proofs, identities, factorisations</td>
+<td>Attempt <strong>any 10</strong></td>
+</tr>
+<tr>
+<td>C — Long Response</td>
+<td>5 × 8 = 40</td>
+<td>Multi-part: full derivation + application</td>
+<td>Attempt <strong>all 5</strong>, internal choice in each</td>
+</tr>
+</tbody>
+</table>
+<p>Total: <strong>100 marks · 3 hours · No practical</strong>.</p>
+<h2>Chapter weightage table</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chapter</th>
+<th>Trend</th>
+<th>Key concepts</th>
+<th>Common question types</th>
+<th>Must-do exercises</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Number Systems</td>
+<td>Med</td>
+<td>Real &amp; complex numbers, modulus, conjugate, properties of complex numbers</td>
+<td>MCQs on properties; SRQ on simplifying complex expressions</td>
+<td>Ex 1.1, 1.2, 1.3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sets, Functions &amp; Groups</td>
+<td>Med</td>
+<td>Operations on sets, Venn diagrams, function types, groupoid/semigroup/group</td>
+<td>SRQ on De Morgan's laws; LRQ proving group properties</td>
+<td>Ex 2.4, 2.5, 2.7</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Matrices &amp; Determinants</td>
+<td><strong>High</strong></td>
+<td>Types, transpose, inverse, rank, system of linear equations (Cramer's rule, matrix inversion, Gauss elimination)</td>
+<td>One full LRQ almost every year on solving 3×3 system</td>
+<td>Ex 3.2, 3.3, 3.5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quadratic Equations</td>
+<td><strong>High</strong></td>
+<td>Nature of roots, sum/product of roots, synthetic division, simultaneous equations</td>
+<td>LRQ — solve simultaneous eqs / discuss nature of roots</td>
+<td>Ex 4.4, 4.6, 4.7, 4.9</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Partial Fractions</td>
+<td>Med</td>
+<td>All four cases (linear, repeated linear, quadratic, repeated quadratic)</td>
+<td>One SRQ resolving into partial fractions</td>
+<td>Ex 5.1, 5.2, 5.3</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Sequences &amp; Series</td>
+<td><strong>High</strong></td>
+<td>A.P., G.P., H.P., arithmetic/geometric/harmonic means, sum to n terms, sum to infinity</td>
+<td>One LRQ with 2 parts (find nth term + sum)</td>
+<td>Ex 6.4, 6.7, 6.10, 6.11</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Permutation, Combination &amp; Probability</td>
+<td>Med</td>
+<td>nPr, nCr, sample space, mutually exclusive vs independent events</td>
+<td>SRQ word problem; MCQ on probability of card/dice events</td>
+<td>Ex 7.2, 7.3, 7.7</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Math Induction &amp; Binomial Theorem</td>
+<td><strong>High</strong></td>
+<td>Principle of MI, binomial expansion, general term, binomial series for negative/fractional index</td>
+<td>LRQ — prove by induction OR find specified term in expansion</td>
+<td>Ex 8.1, 8.2, 8.3</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Fundamentals of Trigonometry</td>
+<td>Med</td>
+<td>Angle measure (radian/degree), trig ratios, signs in quadrants</td>
+<td>MCQs on signs; SRQ on conversions</td>
+<td>Ex 9.1, 9.3</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Trig Identities (Sum/Diff)</td>
+<td><strong>High</strong></td>
+<td>sin(A±B), cos(A±B), tan(A±B), double, half, sum-to-product</td>
+<td>One full LRQ proving an identity</td>
+<td>Ex 10.1, 10.2, 10.3, 10.4</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Trig Functions &amp; Graphs</td>
+<td>Med</td>
+<td>Domain, range, period, graphing y = sin x, cos x, tan x, sec x, csc x, cot x</td>
+<td>MCQ on period; SRQ sketching one graph</td>
+<td>Ex 11.1, 11.2</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Application of Trigonometry</td>
+<td><strong>High</strong></td>
+<td>Solution of triangles, law of sines, law of cosines, area of triangle, escribed circles, in-circle, circumcircle</td>
+<td>LRQ — solve a triangle given specific sides/angles</td>
+<td>Ex 12.3, 12.6, 12.7, 12.8</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Inverse Trig Functions</td>
+<td>Low</td>
+<td>Domain, range, principal values, addition formulas</td>
+<td>One MCQ + maybe one SRQ</td>
+<td>Ex 13.1, 13.2</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Trig Equations</td>
+<td>Med</td>
+<td>Solving trig equations in [0, 2π]</td>
+<td>SRQ — solve a given equation</td>
+<td>Ex 14.1</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>High-weightage chapters carry roughly 55% of the paper.</strong> Mastering Ch 3, 4, 6, 8, 10, 12 alone secures a solid pass; everything else is grade-improvement.</p>
+</blockquote>
+<h2>Top guess topics — almost-certain in every paper</h2>
+<ol>
+<li><strong>Solve a system of 3 linear equations using matrix inversion or Cramer's rule</strong> (LRQ).</li>
+<li><strong>Resolve a fraction into partial fractions</strong> (SRQ, case 3 quadratic non-repeated is most common).</li>
+<li><strong>Find the sum of n terms of an A.P. or G.P.</strong> given two facts about the sequence (LRQ).</li>
+<li><strong>Prove a statement by mathematical induction</strong> (LRQ part-a).</li>
+<li><strong>Find a specific term (e.g. middle, term independent of x) in a binomial expansion</strong> (LRQ part-b).</li>
+<li><strong>Prove a sum/difference identity</strong> like sin(A+B) + sin(A−B) = 2 sin A cos B (LRQ).</li>
+<li><strong>Solve a triangle (SAS or SSS) using law of cosines + law of sines</strong> (LRQ).</li>
+<li><strong>One named formula MCQ</strong> every paper: nature of roots discriminant, period of cot x, value of sin 75°, etc.</li>
+</ol>
+<h2>Common student mistakes</h2>
+<ul>
+<li><strong>Sign errors</strong> in expanding (a − b)ⁿ — students drop alternating signs.</li>
+<li><strong>Confusing A.M. with A.P.</strong> when only two means are inserted vs. n means.</li>
+<li><strong>Forgetting domain restriction</strong> when solving trig equations — losing half-marks for "general solution" missing.</li>
+<li><strong>Mis-applying Cramer's rule</strong> when the determinant is zero (system is inconsistent / dependent — they keep computing).</li>
+<li><strong>Using degrees inside calculus-style trig formulas</strong> — radian conversion is mandatory in Ch 9.</li>
+<li><strong>Skipping the verification step</strong> in induction (n = k+1 case) — examiners deduct 2 marks.</li>
+</ul>
+<h2>Recommended study order (highest mark return first)</h2>
+<ol>
+<li>Ch 4 Quadratic Equations</li>
+<li>Ch 3 Matrices</li>
+<li>Ch 6 Sequences &amp; Series</li>
+<li>Ch 10 Trig Identities</li>
+<li>Ch 8 Induction &amp; Binomial</li>
+<li>Ch 12 Application of Trigonometry</li>
+<li>Ch 7 Permutation/Combination/Probability</li>
+<li>Ch 5 Partial Fractions</li>
+<li>Ch 11 Trig Functions &amp; Graphs</li>
+<li>Ch 14 Trig Equations</li>
+<li>Ch 9 Fundamentals of Trigonometry</li>
+<li>Ch 1 Number Systems</li>
+<li>Ch 2 Sets, Functions &amp; Groups</li>
+<li>Ch 13 Inverse Trig</li>
+</ol>
+<p>After mastering 1–6, students have <strong>~70 marks</strong> of paper covered. Spend the last week on the remaining for grade boost.</p>
+<h2>Formula sheet to memorize cold</h2>
+<ul>
+<li>Quadratic discriminant: <code>Δ = b² − 4ac</code> — nature of roots from sign of Δ.</li>
+<li>Sum of roots <code>α + β = −b/a</code>; product <code>αβ = c/a</code>.</li>
+<li>Sum of A.P. of n terms: <code>Sₙ = n/2 · [2a + (n−1)d]</code>.</li>
+<li>Sum of G.P. of n terms: <code>Sₙ = a(1 − rⁿ)/(1 − r)</code>, sum to infinity (<code>|r|&lt;1</code>): <code>S∞ = a/(1 − r)</code>.</li>
+<li>Binomial general term: <code>Tᵣ₊₁ = C(n,r) aⁿ⁻ʳ bʳ</code>.</li>
+<li>sin(A+B) = sin A cos B + cos A sin B.</li>
+<li>cos(A+B) = cos A cos B − sin A sin B.</li>
+<li>Law of sines: <code>a/sin A = b/sin B = c/sin C = 2R</code>.</li>
+<li>Law of cosines: <code>a² = b² + c² − 2bc cos A</code>.</li>
+<li>Area of triangle: <code>½ ab sin C</code> and <code>s = (a+b+c)/2</code>, <code>Area = √[s(s−a)(s−b)(s−c)]</code>.</li>
+</ul>
+</body>
+</html>

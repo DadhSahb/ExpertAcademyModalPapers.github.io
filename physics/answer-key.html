@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Answer Key & Marking Scheme — Physics Model Paper 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --rule: #cfcfcf;
+    --accent: #0b5394;
+    --soft-bg: #f6f6f4;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+    margin: 0;
+    padding: 2.5rem clamp(1rem, 5vw, 4rem);
+    font-family: "Source Serif Pro", "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    background: #fdfdfb;
+    line-height: 1.55;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.rtl {
+    direction: rtl;
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Urdu Typesetting",
+                 "Arial Unicode MS", serif;
+    font-size: 1.15rem;
+    line-height: 2.1;
+}
+
+.crumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+.crumb a { color: var(--accent); text-decoration: none; }
+.crumb a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5 {
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+}
+
+body.rtl h1, body.rtl h2, body.rtl h3, body.rtl h4 {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Arial Unicode MS", serif;
+}
+
+h1 { font-size: 2rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.4rem; }
+h2 { font-size: 1.45rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; color: var(--accent); }
+
+p, ul, ol { margin: 0.6rem 0; }
+
+ul, ol { padding-left: 1.6rem; }
+body.rtl ul, body.rtl ol { padding-right: 1.6rem; padding-left: 0; }
+
+li { margin: 0.3rem 0; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+body.rtl table { font-size: 1.05rem; }
+
+th, td {
+    border: 1px solid var(--rule);
+    padding: 0.55rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+body.rtl th, body.rtl td { text-align: right; }
+
+th {
+    background: var(--soft-bg);
+    font-weight: 600;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+body.rtl th {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", serif;
+}
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1rem 0;
+    padding: 0.6rem 1rem;
+    background: var(--soft-bg);
+    color: var(--ink);
+    font-style: italic;
+}
+
+body.rtl blockquote {
+    border-left: none;
+    border-right: 3px solid var(--accent);
+}
+
+code {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.05rem 0.35rem;
+    font-family: "JetBrains Mono", "Consolas", monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+pre code { background: none; border: none; padding: 0; }
+
+hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2rem 0;
+}
+
+a { color: var(--accent); }
+
+/* Exam-paper specific look for model papers */
+body.exam .crumb { border-bottom: 2px solid var(--ink); }
+body.exam h1 { text-align: center; border-bottom: none; }
+body.exam h1 + p { text-align: center; font-weight: 600; margin-top: -0.4rem; }
+
+/* Cover sheet table for the exam header (Roll No, Time, Marks) */
+body.exam table:first-of-type {
+    border: 2px solid var(--ink);
+    margin-bottom: 1.5rem;
+}
+body.exam table:first-of-type th,
+body.exam table:first-of-type td {
+    border: 1px solid var(--ink);
+}
+
+/* Print rules */
+@media print {
+    body {
+        padding: 1cm 1.5cm;
+        background: white;
+        max-width: none;
+    }
+    .crumb { display: none; }
+    h1 { page-break-before: avoid; }
+    h2 { page-break-after: avoid; }
+    table, blockquote, pre { page-break-inside: avoid; }
+    body.exam h2 { page-break-before: auto; }
+    a { color: var(--ink); text-decoration: none; }
+}
+
+@page {
+    size: A4;
+    margin: 1.5cm 1.7cm;
+}
+</style>
+</head>
+<body class="">
+<div class="crumb">
+  <span><a href="../README.html">11th Class Prep Guide</a> &rsaquo; Physics</span>
+  <span>BISE Abbottabad &middot; FSc Pre-Engineering</span>
+</div>
+<h1>Answer Key &amp; Marking Scheme — Physics Model Paper 1</h1>
+<h2>Section A — MCQ key</h2>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th>Ans</th>
+<th>Q</th>
+<th>Ans</th>
+<th>Q</th>
+<th>Ans</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>b</td>
+<td>7</td>
+<td>b</td>
+<td>13</td>
+<td>b</td>
+</tr>
+<tr>
+<td>2</td>
+<td>c</td>
+<td>8</td>
+<td>b</td>
+<td>14</td>
+<td>c</td>
+</tr>
+<tr>
+<td>3</td>
+<td>c</td>
+<td>9</td>
+<td>c</td>
+<td>15</td>
+<td>c</td>
+</tr>
+<tr>
+<td>4</td>
+<td>d</td>
+<td>10</td>
+<td>b</td>
+<td>16</td>
+<td>c</td>
+</tr>
+<tr>
+<td>5</td>
+<td>b</td>
+<td>11</td>
+<td>c</td>
+<td>17</td>
+<td>c</td>
+</tr>
+<tr>
+<td>6</td>
+<td>c</td>
+<td>12</td>
+<td>b</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total: 17 / 17.</strong></p>
+<hr>
+<h2>Section B — Short Response (4 marks each, attempt any 11)</h2>
+<p><strong>B1.</strong> <em>Base units</em> — defined independently (e.g. metre, kilogram, second, ampere). <em>Derived units</em> — combinations (e.g. newton = kg·m/s², joule = kg·m²/s²). <em>(2 + 2.)</em></p>
+<p><strong>B2.</strong> Dimensions of <code>v²</code> = <code>[L²T⁻²]</code>. <code>u²</code> = <code>[L²T⁻²]</code>. <code>as</code> = <code>[LT⁻²][L]</code> = <code>[L²T⁻²]</code>. All terms have the same dimension → equation is dimensionally homogeneous. <em>(2 marks each side, 1 conclusion.)</em></p>
+<p><strong>B3.</strong> <code>R = √(F₁² + F₂²) = √(100 + 64) = √164 ≈ 12.8 N</code>. Direction <code>θ = tan⁻¹(8/10) = 38.7°</code> from the 10 N force. <em>(2 marks magnitude, 2 marks direction.)</em></p>
+<p><strong>B4.</strong> Statement: work done by net force = change in KE. Proof from <code>F = ma</code>, <code>v² = u² + 2as</code>: <code>W = F·s = m·a·s = m·(v² − u²)/2 = ΔKE</code>. <em>(2 marks statement, 2 marks derivation.)</em></p>
+<p><strong>B5.</strong> <em>Elastic</em>: KE conserved (e.g. collision of gas molecules). <em>Inelastic</em>: KE not conserved (e.g. clay ball stuck to wall). <em>(2 + 2.)</em></p>
+<p><strong>B6.</strong> <code>p = mv = 5 × 4 = 20 kg·m/s</code>. <code>KE = ½mv² = ½(5)(16) = 40 J</code>. <em>(2 + 2.)</em></p>
+<p><strong>B7.</strong> Vertical motion: <code>vy = u sin θ − g t</code>. At top, <code>vy = 0 → t = u sin θ / g</code>. Total time of flight = <code>2 u sin θ / g</code>. <em>(2 marks setup, 2 marks final formula.)</em></p>
+<p><strong>B8.</strong> <code>F = G m₁m₂ / r²</code>. Gravitational potential at distance r: <code>V = −GM/r</code> (work done per unit mass to bring from infinity). <em>(2 + 2.)</em></p>
+<p><strong>B9.</strong> Derivation: change in velocity in time <code>Δt</code> for circular motion of radius r at speed v gives <code>|Δv| = v·Δθ</code>. Acceleration <code>a = Δv/Δt = v · (Δθ/Δt) = v·ω = v²/r</code>. <em>(2 marks geometry, 2 marks limit.)</em></p>
+<p><strong>B10.</strong> Venturi meter: a horizontal pipe with a constriction. By continuity, velocity is higher in narrow section; by Bernoulli, pressure is lower. The pressure difference is measured (manometer) and used to calculate flow rate. <em>(2 marks principle, 2 marks application.)</em></p>
+<p><strong>B11.</strong> Terminal velocity is the constant velocity at which net force is zero (drag balances weight minus buoyancy). From Stokes' law: <code>vₜ = 2r²(ρ − σ)g / 9η</code>. <em>(2 marks definition, 2 marks formula.)</em></p>
+<p><strong>B12.</strong> For mass on spring, <code>F = −kx → ma = −kx → a = −(k/m)x</code>, comparing with <code>a = −ω²x</code> gives <code>ω = √(k/m)</code>. So <code>T = 2π/ω = 2π √(m/k)</code>. <em>(2 marks derivation, 2 marks final.)</em></p>
+<p><strong>B13.</strong> <em>Superposition</em>: when two or more waves meet, the resultant displacement = algebraic sum of individual displacements. <em>Beats</em>: periodic variation in loudness produced when two sound waves of slightly different frequencies superpose; beat frequency = <code>|f₁ − f₂|</code>. <em>(2 + 2.)</em></p>
+<p><strong>B14.</strong> Wave reflects from both fixed ends, generating a standing wave with nodes at the ends. Fundamental: <code>λ/2 = L → λ = 2L</code>. Speed <code>v = √(T/μ)</code>. So <code>f₁ = v/(2L) = (1/2L)√(T/μ)</code>. <em>(2 marks formation, 2 marks formula.)</em></p>
+<p><strong>B15.</strong> Huygens' principle: every point on a wavefront acts as a source of secondary wavelets; the new wavefront is the envelope of these wavelets. Rectilinear propagation: a small slit acts as point source, but most light continues forward; the envelope of forward-going wavelets is the next plane wavefront → light travels in straight lines. <em>(2 marks statement, 2 marks application.)</em></p>
+<p><strong>B16.</strong> <em>Wavefront</em>: a surface of points oscillating in same phase. <em>Spherical</em>: emitted by point source. <em>Plane</em>: from source at infinity (parallel rays). <em>Cylindrical</em>: from a linear source. <em>(1 mark definition, 1 mark each type.)</em></p>
+<p><strong>B17.</strong> First law: <code>Q = ΔU + W</code> (heat supplied = change in internal energy + work done by gas). For isothermal process, ΔU = 0 (T constant) → <code>Q = W</code>; all heat supplied is converted to work. <em>(2 marks statement, 2 marks isothermal application.)</em></p>
+<hr>
+<h2>Section C — Long Response (8 marks each)</h2>
+<p><strong>Q18 (main).</strong>
+<strong>(a)</strong> <em>Horizontal</em>: <code>x = u cos θ · t</code>. <em>Vertical</em>: <code>y = u sin θ · t − ½ g t²</code>.
+At max height, vertical velocity = 0 → <code>tₕ = u sin θ / g → H = u² sin²θ / 2g</code>.
+Total flight time <code>T = 2 u sin θ / g</code>.
+Range <code>R = u cos θ · T = u² sin 2θ / g</code>.
+<em>(1 mark each component, 2 marks for time of flight, 1 mark each for H and R.)</em>
+<strong>(b)</strong> <code>T = 2(100)(0.5)/10 = 10 s</code>. <code>H = (100)²(0.5)²/(2·10) = 125 m</code>. <code>R = (100)² sin 60°/10 = 1000 × 0.866 = 866 m</code>. <em>(1 mark each.)</em></p>
+<p><strong>Q19 (main).</strong>
+<strong>(a)</strong> Energy conservation: <code>½ m vₑ² = G M m / R → vₑ² = 2GM/R</code>. Using <code>g = GM/R²</code> → <code>vₑ = √(2gR)</code>. <em>(3 marks setup, 2 marks final.)</em>
+<strong>(b)</strong> For planet of mass 2M and radius R: <code>vₑ' = √(2 G(2M)/R) = √2 · √(2GM/R) = √2 · vₑ_earth</code>. In terms of g_planet (= 2g_earth): <code>vₑ' = √(2 · 2g · R) = 2√(gR)</code>. <em>(3 marks.)</em></p>
+<p><strong>Q20 (main).</strong>
+<strong>(a)</strong> Two coherent slits separated by <code>d</code>, screen at distance <code>L</code>. Path difference for nth bright fringe = <code>nλ = d sin θ ≈ d (y/L)</code>. So bright fringes at <code>yₙ = nλL/d</code>. Fringe spacing <code>Δy = yₙ₊₁ − yₙ = λL/d</code>. <em>(3 marks setup with diagram, 2 marks derivation.)</em>
+<strong>(b)</strong> <code>Δy = (600 × 10⁻⁹)(2)/(0.5 × 10⁻³) = 2.4 × 10⁻³ m = 2.4 mm</code>. <em>(3 marks.)</em></p>
+<p><strong>Q21 (main).</strong>
+<strong>(a)</strong> Carnot engine: 4 reversible strokes — isothermal expansion at T₁, adiabatic expansion to T₂, isothermal compression at T₂, adiabatic compression back to T₁. Heat absorbed <code>Q₁ = nRT₁ ln(V₂/V₁)</code>, heat rejected <code>Q₂ = nRT₂ ln(V₂/V₁)</code> (after using adiabatic relations). Efficiency <code>η = (Q₁ − Q₂)/Q₁ = 1 − T₂/T₁</code>. <em>(3 marks cycle description, 2 marks derivation.)</em>
+<strong>(b)</strong> <code>η = 1 − 250/400 = 0.375 = 37.5%</code>. Heat rejected <code>Q₂ = Q₁(1 − η) = 1000 × 0.625 = 625 J</code>. <em>(3 marks.)</em></p>
+<p><strong>Q22 (main).</strong>
+<strong>(a)</strong> For an ideal incompressible non-viscous fluid in steady streamline flow, sum of pressure energy + KE per unit volume + PE per unit volume is constant: <code>P + ½ρv² + ρgh = constant</code>. Derivation: apply work-energy theorem to a fluid element flowing through a section change. <em>(3 marks statement + diagram, 2 marks derivation.)</em>
+<strong>(b)</strong> By continuity: <code>A₁v₁ = A₂v₂ → v₂ = (4)(0.5)/1 = 2 m/s</code>. By Bernoulli (h same): <code>P₁ − P₂ = ½ρ(v₂² − v₁²) = ½(1000)(4 − 0.25) = 1875 Pa</code>. <em>(3 marks.)</em></p>
+<hr>
+<h3>Marking summary</h3>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Allotted</th>
+<th>Earned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A — MCQs</td>
+<td>17</td>
+<td>17</td>
+</tr>
+<tr>
+<td>B — SRQ × 11</td>
+<td>44</td>
+<td>44</td>
+</tr>
+<tr>
+<td>C — LRQ × 3</td>
+<td>24</td>
+<td>24</td>
+</tr>
+<tr>
+<td><strong>Theory total</strong></td>
+<td><strong>85</strong></td>
+<td><strong>85</strong></td>
+</tr>
+<tr>
+<td>Practical</td>
+<td>15</td>
+<td>(separate)</td>
+</tr>
+<tr>
+<td><strong>Grand total</strong></td>
+<td><strong>100</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

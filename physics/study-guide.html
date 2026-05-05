@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Physics — FSc Pre-Engineering Part I</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --rule: #cfcfcf;
+    --accent: #0b5394;
+    --soft-bg: #f6f6f4;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+    margin: 0;
+    padding: 2.5rem clamp(1rem, 5vw, 4rem);
+    font-family: "Source Serif Pro", "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    background: #fdfdfb;
+    line-height: 1.55;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.rtl {
+    direction: rtl;
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Urdu Typesetting",
+                 "Arial Unicode MS", serif;
+    font-size: 1.15rem;
+    line-height: 2.1;
+}
+
+.crumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+.crumb a { color: var(--accent); text-decoration: none; }
+.crumb a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5 {
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+}
+
+body.rtl h1, body.rtl h2, body.rtl h3, body.rtl h4 {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Arial Unicode MS", serif;
+}
+
+h1 { font-size: 2rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.4rem; }
+h2 { font-size: 1.45rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; color: var(--accent); }
+
+p, ul, ol { margin: 0.6rem 0; }
+
+ul, ol { padding-left: 1.6rem; }
+body.rtl ul, body.rtl ol { padding-right: 1.6rem; padding-left: 0; }
+
+li { margin: 0.3rem 0; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+body.rtl table { font-size: 1.05rem; }
+
+th, td {
+    border: 1px solid var(--rule);
+    padding: 0.55rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+body.rtl th, body.rtl td { text-align: right; }
+
+th {
+    background: var(--soft-bg);
+    font-weight: 600;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+body.rtl th {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", serif;
+}
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1rem 0;
+    padding: 0.6rem 1rem;
+    background: var(--soft-bg);
+    color: var(--ink);
+    font-style: italic;
+}
+
+body.rtl blockquote {
+    border-left: none;
+    border-right: 3px solid var(--accent);
+}
+
+code {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.05rem 0.35rem;
+    font-family: "JetBrains Mono", "Consolas", monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+pre code { background: none; border: none; padding: 0; }
+
+hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2rem 0;
+}
+
+a { color: var(--accent); }
+
+/* Exam-paper specific look for model papers */
+body.exam .crumb { border-bottom: 2px solid var(--ink); }
+body.exam h1 { text-align: center; border-bottom: none; }
+body.exam h1 + p { text-align: center; font-weight: 600; margin-top: -0.4rem; }
+
+/* Cover sheet table for the exam header (Roll No, Time, Marks) */
+body.exam table:first-of-type {
+    border: 2px solid var(--ink);
+    margin-bottom: 1.5rem;
+}
+body.exam table:first-of-type th,
+body.exam table:first-of-type td {
+    border: 1px solid var(--ink);
+}
+
+/* Print rules */
+@media print {
+    body {
+        padding: 1cm 1.5cm;
+        background: white;
+        max-width: none;
+    }
+    .crumb { display: none; }
+    h1 { page-break-before: avoid; }
+    h2 { page-break-after: avoid; }
+    table, blockquote, pre { page-break-inside: avoid; }
+    body.exam h2 { page-break-before: auto; }
+    a { color: var(--ink); text-decoration: none; }
+}
+
+@page {
+    size: A4;
+    margin: 1.5cm 1.7cm;
+}
+</style>
+</head>
+<body class="">
+<div class="crumb">
+  <span><a href="../README.html">11th Class Prep Guide</a> &rsaquo; Physics</span>
+  <span>BISE Abbottabad &middot; FSc Pre-Engineering</span>
+</div>
+<h1>Physics — FSc Pre-Engineering Part I</h1>
+<p>KPTBB / BISE Abbottabad · 11 chapters · 85 (theory) + 15 (practical) = <strong>100 marks</strong> · 3 hours</p>
+<h2>Paper pattern at a glance</h2>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Marks</th>
+<th>Format</th>
+<th>Attempt rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A — MCQs</td>
+<td>17 × 1 = 17</td>
+<td>One mark each</td>
+<td>All compulsory (separate OMR sheet)</td>
+</tr>
+<tr>
+<td>B — Short Response</td>
+<td>17 × 4 = (44 chosen)</td>
+<td>Numerical / definition / short derivation</td>
+<td>Attempt <strong>any 11</strong></td>
+</tr>
+<tr>
+<td>C — Long Response</td>
+<td>5 × 8 = (24 chosen)</td>
+<td>Full derivation + numerical</td>
+<td>Attempt <strong>any 3</strong></td>
+</tr>
+<tr>
+<td>Practical</td>
+<td>15</td>
+<td>Notebook + viva + experiment</td>
+<td>Separate exam day</td>
+</tr>
+</tbody>
+</table>
+<p>Theory total: <strong>85</strong>. Practical total: <strong>15</strong>. Grand total: <strong>100</strong>.</p>
+<h2>Chapter weightage table</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chapter</th>
+<th>Trend</th>
+<th>Key concepts</th>
+<th>Common question types</th>
+<th>Must-do exercises</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Measurements</td>
+<td>Med</td>
+<td>Base &amp; derived units, dimensional analysis, significant figures, error analysis</td>
+<td>MCQ on units; SRQ on dimensions / sig figs</td>
+<td>Numerical 1.1, 1.5; theory questions on systematic vs random error</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Vectors &amp; Equilibrium</td>
+<td><strong>High</strong></td>
+<td>Vector addition (rectangular components), product (dot, cross), torque, equilibrium conditions</td>
+<td>LRQ on torque/equilibrium with diagram</td>
+<td>Numerical 2.1, 2.5, 2.8; review parallel &amp; perp components</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Motion &amp; Force</td>
+<td><strong>High</strong></td>
+<td>Equations of motion, Newton's laws, momentum, projectile motion, elastic &amp; inelastic collisions</td>
+<td>LRQ — projectile motion (max height/range/time); collision conservation</td>
+<td>Numerical 3.4, 3.7, 3.10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Work &amp; Energy</td>
+<td><strong>High</strong></td>
+<td>Work done by constant/variable force, KE, PE, work-energy theorem, conservation of energy, power, escape velocity</td>
+<td>LRQ — escape velocity derivation; numerical on power &amp; work</td>
+<td>Numerical 4.2, 4.7, 4.9</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Circular Motion</td>
+<td>Med</td>
+<td>Angular displacement/velocity, centripetal force/acceleration, banking of roads, artificial satellites, real &amp; apparent weight</td>
+<td>SRQ on banking; LRQ on satellite orbital velocity</td>
+<td>Numerical 5.4, 5.6</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Fluid Dynamics</td>
+<td>Med</td>
+<td>Drag force, terminal velocity, Stokes' law, equation of continuity, Bernoulli's equation, Torricelli's theorem</td>
+<td>SRQ on Bernoulli applications (Venturi, lift on aeroplane wing)</td>
+<td>Numerical 6.2, 6.5</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Oscillations</td>
+<td><strong>High</strong></td>
+<td>SHM, displacement/velocity/acceleration in SHM, simple pendulum, mass on spring, energy in SHM, free/damped/forced oscillations, resonance</td>
+<td>LRQ — SHM equations + numerical</td>
+<td>Numerical 7.3, 7.6, 7.8</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Waves</td>
+<td><strong>High</strong></td>
+<td>Progressive waves, transverse vs longitudinal, speed of sound, principle of superposition, beats, stationary waves in strings &amp; pipes, Doppler effect</td>
+<td>LRQ — Doppler effect; SRQ on beats</td>
+<td>Numerical 8.4, 8.7, 8.10</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Physical Optics</td>
+<td><strong>High</strong></td>
+<td>Wavefronts, Huygens' principle, interference (Young's double slit), diffraction grating, polarisation</td>
+<td>LRQ — Young's double slit derivation + numerical</td>
+<td>Numerical 9.2, 9.5</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Thermodynamics</td>
+<td><strong>High</strong></td>
+<td>Internal energy, 1st law, isobaric/isochoric/isothermal/adiabatic processes, molar specific heats, Carnot cycle &amp; efficiency, 2nd law, entropy</td>
+<td>LRQ — Carnot engine derivation OR efficiency numerical</td>
+<td>Numerical 10.3, 10.6</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Heat</td>
+<td>Med</td>
+<td>Thermometric scales, expansion, gas laws, kinetic theory of gases</td>
+<td>SRQ on gas laws / KTM postulates</td>
+<td>Numerical 11.2, 11.4</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Chapters 2, 3, 4, 7, 8, 9, 10 yield <strong>~70% of theory marks</strong> between them.</p>
+</blockquote>
+<h2>Top guess topics — almost-certain questions</h2>
+<ol>
+<li><strong>Projectile motion</strong>: derivation of time of flight, max height, range (LRQ).</li>
+<li><strong>Escape velocity</strong> derivation from energy conservation (LRQ).</li>
+<li><strong>Banking of road</strong> — derivation of optimal angle <code>tan θ = v² / (rg)</code> (SRQ or part of LRQ).</li>
+<li><strong>SHM equations + simple pendulum derivation</strong> of <code>T = 2π √(L/g)</code> (LRQ).</li>
+<li><strong>Doppler effect</strong> — observer/source motion, formulas, one numerical (LRQ).</li>
+<li><strong>Young's double-slit experiment</strong> — derivation of fringe spacing <code>λL/d</code> + sample numerical (LRQ).</li>
+<li><strong>Carnot cycle</strong> — efficiency <code>1 − T₂/T₁</code>, derivation + one numerical (LRQ).</li>
+<li><strong>Bernoulli's equation</strong> application: lift on aeroplane wing OR Venturi meter (SRQ).</li>
+<li><strong>Dimensional analysis</strong> of a given equation (SRQ).</li>
+<li><strong>Vector resolution</strong> problem — find resultant of three forces in equilibrium (SRQ).</li>
+</ol>
+<h2>Common student mistakes</h2>
+<ul>
+<li><strong>Mixing up time of flight and time to max height</strong> in projectile (factor of 2 error).</li>
+<li><strong>Sign confusion in 1st law of thermodynamics</strong> — <code>ΔU = Q − W</code> (W done by gas) vs <code>ΔU = Q + W</code> (W done on gas). KP textbook uses <code>Q = ΔU + W</code>.</li>
+<li><strong>Forgetting to convert units</strong> (cm to m, °C to K) — costs full marks on numericals.</li>
+<li><strong>Treating Doppler shift as always increasing frequency</strong> — they ignore the sign rule.</li>
+<li><strong>Confusing centripetal vs centrifugal</strong> — centrifugal is fictitious; never use it as the "real" force in Newton's 2nd law setup.</li>
+<li><strong>Drawing free-body diagrams sloppily</strong> in equilibrium problems — examiner penalises missing forces.</li>
+</ul>
+<h2>Recommended study order</h2>
+<ol>
+<li>Ch 3 Motion &amp; Force <em>(largest concept base — leverages into 4, 7, 10)</em></li>
+<li>Ch 2 Vectors &amp; Equilibrium</li>
+<li>Ch 4 Work &amp; Energy</li>
+<li>Ch 7 Oscillations</li>
+<li>Ch 8 Waves</li>
+<li>Ch 9 Physical Optics</li>
+<li>Ch 10 Thermodynamics</li>
+<li>Ch 11 Heat</li>
+<li>Ch 5 Circular Motion</li>
+<li>Ch 6 Fluid Dynamics</li>
+<li>Ch 1 Measurements</li>
+</ol>
+<h2>Practical tips (for the 15-mark practical paper)</h2>
+<p>The board's standard list of experiments is:</p>
+<ol>
+<li>Vernier callipers — dimensions of a small body, density.</li>
+<li>Screw gauge — diameter of a wire, area.</li>
+<li>Spherometer — radius of curvature.</li>
+<li>Simple pendulum — value of <code>g</code>.</li>
+<li>Helical spring — spring constant <code>k</code>.</li>
+<li>Coefficient of viscosity by Stokes' law.</li>
+<li>Resonance tube — speed of sound.</li>
+<li>Bar pendulum (compound).</li>
+<li>Young's modulus (Searle's apparatus).</li>
+</ol>
+<p>Marks split: experiment <strong>8</strong> + viva <strong>3</strong> + notebook <strong>4</strong>.</p>
+<blockquote>
+<p>Tutor tip: have students <strong>rewrite their notebook neatly</strong> in the last week. Examiners often deduct notebook marks for messy graphs and missing precautions.</p>
+</blockquote>
+<h2>Formula sheet to memorize cold</h2>
+<ul>
+<li>Equations of motion: <code>v = u + at</code>, <code>s = ut + ½at²</code>, <code>v² = u² + 2as</code>.</li>
+<li>Projectile range: <code>R = u² sin 2θ / g</code>. Time of flight: <code>T = 2u sin θ / g</code>. Max height: <code>H = u² sin²θ / 2g</code>.</li>
+<li>Newton's 2nd law: <code>F = ma</code>, momentum <code>p = mv</code>.</li>
+<li>Work: <code>W = F · d cos θ</code>. KE = <code>½ mv²</code>, PE = <code>mgh</code>.</li>
+<li>Escape velocity: <code>vₑ = √(2gR)</code>.</li>
+<li>Centripetal acceleration: <code>a = v²/r = ω²r</code>.</li>
+<li>SHM: <code>T = 2π √(m/k)</code> (spring); <code>T = 2π √(L/g)</code> (pendulum).</li>
+<li>Doppler: <code>f' = f (v ± vₒ)/(v ∓ vₛ)</code>.</li>
+<li>Young's fringe spacing: <code>Δy = λL/d</code>.</li>
+<li>Carnot efficiency: <code>η = 1 − T₂/T₁</code>.</li>
+<li>Bernoulli: <code>P + ½ρv² + ρgh = constant</code>.</li>
+</ul>
+</body>
+</html>

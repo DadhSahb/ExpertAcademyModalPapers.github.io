@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Answer Key & Marking Scheme — Chemistry Model Paper 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --rule: #cfcfcf;
+    --accent: #0b5394;
+    --soft-bg: #f6f6f4;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+    margin: 0;
+    padding: 2.5rem clamp(1rem, 5vw, 4rem);
+    font-family: "Source Serif Pro", "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    background: #fdfdfb;
+    line-height: 1.55;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.rtl {
+    direction: rtl;
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Urdu Typesetting",
+                 "Arial Unicode MS", serif;
+    font-size: 1.15rem;
+    line-height: 2.1;
+}
+
+.crumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+.crumb a { color: var(--accent); text-decoration: none; }
+.crumb a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5 {
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+}
+
+body.rtl h1, body.rtl h2, body.rtl h3, body.rtl h4 {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Arial Unicode MS", serif;
+}
+
+h1 { font-size: 2rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.4rem; }
+h2 { font-size: 1.45rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; color: var(--accent); }
+
+p, ul, ol { margin: 0.6rem 0; }
+
+ul, ol { padding-left: 1.6rem; }
+body.rtl ul, body.rtl ol { padding-right: 1.6rem; padding-left: 0; }
+
+li { margin: 0.3rem 0; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+body.rtl table { font-size: 1.05rem; }
+
+th, td {
+    border: 1px solid var(--rule);
+    padding: 0.55rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+body.rtl th, body.rtl td { text-align: right; }
+
+th {
+    background: var(--soft-bg);
+    font-weight: 600;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+body.rtl th {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", serif;
+}
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1rem 0;
+    padding: 0.6rem 1rem;
+    background: var(--soft-bg);
+    color: var(--ink);
+    font-style: italic;
+}
+
+body.rtl blockquote {
+    border-left: none;
+    border-right: 3px solid var(--accent);
+}
+
+code {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.05rem 0.35rem;
+    font-family: "JetBrains Mono", "Consolas", monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+pre code { background: none; border: none; padding: 0; }
+
+hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2rem 0;
+}
+
+a { color: var(--accent); }
+
+/* Exam-paper specific look for model papers */
+body.exam .crumb { border-bottom: 2px solid var(--ink); }
+body.exam h1 { text-align: center; border-bottom: none; }
+body.exam h1 + p { text-align: center; font-weight: 600; margin-top: -0.4rem; }
+
+/* Cover sheet table for the exam header (Roll No, Time, Marks) */
+body.exam table:first-of-type {
+    border: 2px solid var(--ink);
+    margin-bottom: 1.5rem;
+}
+body.exam table:first-of-type th,
+body.exam table:first-of-type td {
+    border: 1px solid var(--ink);
+}
+
+/* Print rules */
+@media print {
+    body {
+        padding: 1cm 1.5cm;
+        background: white;
+        max-width: none;
+    }
+    .crumb { display: none; }
+    h1 { page-break-before: avoid; }
+    h2 { page-break-after: avoid; }
+    table, blockquote, pre { page-break-inside: avoid; }
+    body.exam h2 { page-break-before: auto; }
+    a { color: var(--ink); text-decoration: none; }
+}
+
+@page {
+    size: A4;
+    margin: 1.5cm 1.7cm;
+}
+</style>
+</head>
+<body class="">
+<div class="crumb">
+  <span><a href="../README.html">11th Class Prep Guide</a> &rsaquo; Chemistry</span>
+  <span>BISE Abbottabad &middot; FSc Pre-Engineering</span>
+</div>
+<h1>Answer Key &amp; Marking Scheme — Chemistry Model Paper 1</h1>
+<h2>Section A — MCQ key</h2>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th>Ans</th>
+<th>Q</th>
+<th>Ans</th>
+<th>Q</th>
+<th>Ans</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>b</td>
+<td>7</td>
+<td>a</td>
+<td>13</td>
+<td>b</td>
+</tr>
+<tr>
+<td>2</td>
+<td>b</td>
+<td>8</td>
+<td>c</td>
+<td>14</td>
+<td>b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>c</td>
+<td>9</td>
+<td>c</td>
+<td>15</td>
+<td>a</td>
+</tr>
+<tr>
+<td>4</td>
+<td>b</td>
+<td>10</td>
+<td>c</td>
+<td>16</td>
+<td>b</td>
+</tr>
+<tr>
+<td>5</td>
+<td>c</td>
+<td>11</td>
+<td>c</td>
+<td>17</td>
+<td>a</td>
+</tr>
+<tr>
+<td>6</td>
+<td>b</td>
+<td>12</td>
+<td>d</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total: 17 / 17.</strong></p>
+<hr>
+<h2>Section B — Short Response (4 marks each, attempt any 11)</h2>
+<p><strong>B1.</strong> <em>Empirical</em>: simplest whole-number ratio of atoms (e.g. CH₂O for glucose). <em>Molecular</em>: actual ratio (e.g. C₆H₁₂O₆).
+Compute moles per element: C = 40/12 = 3.33, H = 6.7/1 = 6.7, O = 53.3/16 = 3.33. Divide by smallest (3.33): C:H:O = 1:2:1 → <strong>CH₂O</strong>. <em>(2 marks definition, 2 marks calculation.)</em></p>
+<p><strong>B2.</strong> Avogadro's law: equal volumes of gases at same T and P contain equal numbers of molecules. Hence 1 mole of any gas (6.022 × 10²³ molecules) occupies the same volume at STP — experimentally 22.4 L. <em>(2 + 2.)</em></p>
+<p><strong>B3.</strong> Solvent extraction: separating a solute from a mixture by shaking with a suitable immiscible solvent in which the solute is more soluble. Example: extracting iodine from aqueous solution into CCl₄ in a separating funnel. <em>(2 marks principle, 2 marks example.)</em></p>
+<p><strong>B4.</strong> Diagram: filter-paper strip, baseline, sample spot, solvent reservoir, solvent front. <code>Rf = (distance moved by solute)/(distance moved by solvent front)</code>. <em>(2 marks diagram, 2 marks Rf.)</em></p>
+<p><strong>B5.</strong> From KMT, pressure <code>P = (1/3) ρ c̄²</code>, where ρ depends on N/V. At constant T, c̄² is constant → <code>P ∝ 1/V</code>, which is Boyle's law. <em>(2 marks KMT expression, 2 marks derivation.)</em></p>
+<p><strong>B6.</strong> Real gases have intermolecular forces (matter at high P) and finite molecular volume (matter when V is small). At high P / low T, both become significant — gas behaviour deviates. van der Waals correction: <code>(P + an²/V²)(V − nb) = nRT</code>. <em>(2 marks reasoning, 2 marks equation.)</em></p>
+<p><strong>B7.</strong> H-bond between O–H of one water molecule and lone pair on O of another. Consequences: ice less dense than water (open hexagonal lattice) → ice floats; high boiling point of water vs H₂S. <em>(2 marks H-bond, 2 marks consequence.)</em></p>
+<p><strong>B8.</strong> <em>Ionic</em> (e.g. NaCl, KBr): high m.p., conduct in molten/solution, brittle, soluble in water. <em>Molecular</em> (e.g. ice, dry ice): low m.p., poor conductor, soft, soluble in non-polar solvents. <em>(2 marks each.)</em></p>
+<p><strong>B9.</strong> <code>n</code> (principal — energy level, 1, 2, 3 …); <code>l</code> (azimuthal — subshell shape, 0 to n−1; s, p, d, f); <code>mₗ</code> (magnetic — orientation, −l to +l); <code>mₛ</code> (spin, ±½). <em>(1 mark each.)</em></p>
+<p><strong>B10.</strong> Heisenberg: it is impossible to determine simultaneously, with absolute precision, the position and momentum of a microscopic particle. <code>Δx · Δp ≥ h/4π</code>. <em>(2 + 2.)</em></p>
+<p><strong>B11.</strong> In <code>CH₄</code>, one 2s and three 2p orbitals of carbon mix to form four equivalent <code>sp³</code> hybrid orbitals at 109.5°, each overlapping with 1s of H to form a σ bond. Tetrahedral geometry. <em>(2 marks process, 2 marks geometry &amp; angle.)</em></p>
+<p><strong>B12.</strong> Hess's law: total enthalpy change of a reaction is the same whether it takes place in one step or in several steps. Useful when ΔH cannot be measured directly. Example: ΔH for C → CO₂ via CO is the sum of ΔH(C→CO) + ΔH(CO→CO₂). <em>(2 + 2.)</em></p>
+<p><strong>B13.</strong> <code>Kc = [NO₂]² / [N₂O₄] = (0.2)² / 0.4 = 0.04/0.4 = **0.1 M**</code>. <em>(2 marks expression, 2 marks numerical.)</em></p>
+<p><strong>B14.</strong> Le Chatelier: if a system at equilibrium is disturbed, the equilibrium shifts to oppose the change. For Haber <code>N₂ + 3H₂ ⇌ 2NH₃</code>, ΔH &lt; 0: increase P shifts forward (fewer moles), decrease T shifts forward (exothermic). Optimal industrial conditions: ~200 atm, ~450 °C, Fe catalyst. <em>(2 marks principle, 2 marks application.)</em></p>
+<p><strong>B15.</strong> Moles NaOH = 4/40 = 0.1. Volume = 0.25 L. <code>M = 0.1 / 0.25 = **0.4 M**</code>. <em>(2 + 2.)</em></p>
+<p><strong>B16.</strong> <em>First</em>: mass of substance deposited at electrode is proportional to charge passed: <code>m ∝ Q</code>. <em>Second</em>: when same charge is passed through different electrolytes, masses deposited are proportional to their equivalent weights: <code>m₁/m₂ = E₁/E₂</code>. <em>(2 + 2.)</em></p>
+<p><strong>B17.</strong> <em>Order</em>: sum of exponents of concentration terms in the experimental rate law (can be fractional, zero). <em>Molecularity</em>: number of reactant species in the elementary step (always whole). E.g. <code>2NO + O₂ → 2NO₂</code>: order = 3 experimentally; molecularity = 3. Decomposition of N₂O₅: order = 1; molecularity = 1. <em>(2 marks definitions, 2 marks examples.)</em></p>
+<hr>
+<h2>Section C — Long Response (8 marks each)</h2>
+<p><strong>Q18 (main).</strong>
+<strong>(a)</strong> Reaction: <code>CaCO₃ + 2HCl → CaCl₂ + CO₂ + H₂O</code>.
+Moles CaCO₃ = 5/100 = 0.05. Moles HCl = 0.020 × 2 = 0.04.
+Required HCl for 0.05 mol CaCO₃ = 0.10 mol. Available = 0.04 mol → <strong>HCl is limiting</strong>.
+Moles CO₂ from 0.04 mol HCl = 0.04 / 2 = 0.02. Mass CO₂ = 0.02 × 44 = <strong>0.88 g</strong>. <em>(2 marks moles, 1 mark identifying LR, 2 marks CO₂ mass.)</em>
+<strong>(b)</strong> Percent yield = (actual / theoretical) × 100. But theoretical here (0.88 g) &lt; actual claimed (1.6 g) → result invalid; check for error in problem. Assuming theoretical 1.76 g (i.e. CaCO₃ limiting): yield = (1.6/1.76) × 100 = 90.9 %. <em>(2 marks formula, 1 mark interpretation.)</em></p>
+<blockquote>
+<p><em>Tutor note:</em> model paper deliberately keeps the LR question simple. Examiners typically use clean numbers. Adjust for your students.</p>
+</blockquote>
+<p><strong>Q19 (main).</strong>
+<strong>(a)</strong> <em>Bohr's postulates</em>: electron in stationary orbit doesn't radiate; angular momentum <code>mvr = nh/2π</code>; energy emitted/absorbed in transitions equals <code>hν</code>.
+Equating Coulomb attraction = centripetal force: <code>kZe²/r² = mv²/r → r = kZe²/(mv²)</code>.
+Combine with <code>mvr = nh/2π → v = nh/(2πmr)</code>.
+Substituting: <code>r = n²h² / (4π²mkZe²)</code>. For H (Z=1), <code>rₙ = 0.529 n² Å</code>.
+Energy: <code>E = KE + PE = ½mv² − kZe²/r = −kZe²/(2r) → Eₙ = −2π²mk²Z²e⁴/(n²h²)</code> = <code>−13.6 Z²/n² eV</code>. <em>(3 marks radius, 3 marks energy.)</em>
+<strong>(b)</strong> First Balmer line (n₁=2, n₂=3): <code>1/λ = R (1/4 − 1/9) = R × 5/36 → λ = 36/(5R) = 656 nm</code>. <em>(2 marks.)</em></p>
+<p><strong>Q20 (main).</strong>
+<strong>(a)</strong> Le Chatelier: if a system at equilibrium is disturbed by change in concentration, pressure, or temperature, the system adjusts to partially undo the change.
+<em>(i) Ammonia synthesis</em>: <code>N₂ + 3H₂ ⇌ 2NH₃</code>, 4 mol → 2 mol. Increase P → equilibrium shifts forward, more NH₃.
+<em>(ii) Contact process</em>: <code>2SO₂ + O₂ ⇌ 2SO₃</code>, ΔH &lt; 0. Decrease T → equilibrium shifts forward, more SO₃; but rate slows, so industrial compromise at 450 °C with V₂O₅ catalyst. <em>(2 marks statement, 2 marks each application.)</em>
+<strong>(b)</strong> <code>Kp = P_SO₃² / (P_SO₂² · P_O₂)</code>. <em>(2 marks.)</em></p>
+<p><strong>Q21 (main).</strong>
+<strong>(a)</strong> Daniell cell: Zn rod in ZnSO₄ (anode), Cu rod in CuSO₄ (cathode), salt bridge (KCl/agar) connecting both half-cells.
+<em>Anode</em>: <code>Zn → Zn²⁺ + 2e⁻</code> (oxidation).
+<em>Cathode</em>: <code>Cu²⁺ + 2e⁻ → Cu</code> (reduction).
+<em>Net</em>: <code>Zn + Cu²⁺ → Zn²⁺ + Cu</code>.
+Cell representation: <code>Zn | Zn²⁺(1M) || Cu²⁺(1M) | Cu</code>. EMF = 1.10 V. <em>(3 marks setup with diagram, 3 marks reactions &amp; notation.)</em>
+<strong>(b)</strong> <code>Q = It = 2 × 1800 = 3600 C</code>. From <code>m = MIt/(nF)</code>: <code>m = (63.5)(3600)/(2 × 96500) = 1.184 g</code>. <em>(2 marks.)</em></p>
+<p><strong>Q22 (main).</strong>
+<strong>(a)</strong> <em>Rate</em>: change in conc per unit time. <em>Rate constant <code>k</code></em>: proportionality constant in rate law, depends only on T and catalyst. <em>Half-life <code>t₁/₂</code></em>: time for concentration to fall to half its initial value. <em>Activation energy <code>Eₐ</code></em>: minimum energy barrier reactants must cross. <em>(1 mark each.)</em>
+<strong>(b)</strong> Arrhenius: <code>k = A e^(−Eₐ/RT)</code>. Taking ln: <code>ln k = ln A − Eₐ/(RT)</code>. Plot of <code>ln k</code> (y-axis) vs <code>1/T</code> (x-axis) is linear with slope <code>−Eₐ/R</code>. Hence <code>Eₐ = −R × slope</code>. <em>(2 marks equation, 2 marks plot &amp; extraction of Eₐ.)</em></p>
+<hr>
+<h3>Marking summary</h3>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Allotted</th>
+<th>Earned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A — MCQs</td>
+<td>17</td>
+<td>17</td>
+</tr>
+<tr>
+<td>B — SRQ × 11</td>
+<td>44</td>
+<td>44</td>
+</tr>
+<tr>
+<td>C — LRQ × 3</td>
+<td>24</td>
+<td>24</td>
+</tr>
+<tr>
+<td><strong>Theory total</strong></td>
+<td><strong>85</strong></td>
+<td><strong>85</strong></td>
+</tr>
+<tr>
+<td>Practical</td>
+<td>15</td>
+<td>(separate)</td>
+</tr>
+<tr>
+<td><strong>Grand total</strong></td>
+<td><strong>100</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

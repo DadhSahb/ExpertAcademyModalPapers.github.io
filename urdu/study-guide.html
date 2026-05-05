@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>اردو (لازمی) — گیارہویں جماعت</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --rule: #cfcfcf;
+    --accent: #0b5394;
+    --soft-bg: #f6f6f4;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+    margin: 0;
+    padding: 2.5rem clamp(1rem, 5vw, 4rem);
+    font-family: "Source Serif Pro", "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    background: #fdfdfb;
+    line-height: 1.55;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.rtl {
+    direction: rtl;
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Urdu Typesetting",
+                 "Arial Unicode MS", serif;
+    font-size: 1.15rem;
+    line-height: 2.1;
+}
+
+.crumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+.crumb a { color: var(--accent); text-decoration: none; }
+.crumb a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5 {
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+}
+
+body.rtl h1, body.rtl h2, body.rtl h3, body.rtl h4 {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Arial Unicode MS", serif;
+}
+
+h1 { font-size: 2rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.4rem; }
+h2 { font-size: 1.45rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; color: var(--accent); }
+
+p, ul, ol { margin: 0.6rem 0; }
+
+ul, ol { padding-left: 1.6rem; }
+body.rtl ul, body.rtl ol { padding-right: 1.6rem; padding-left: 0; }
+
+li { margin: 0.3rem 0; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+body.rtl table { font-size: 1.05rem; }
+
+th, td {
+    border: 1px solid var(--rule);
+    padding: 0.55rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+body.rtl th, body.rtl td { text-align: right; }
+
+th {
+    background: var(--soft-bg);
+    font-weight: 600;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+body.rtl th {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", serif;
+}
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1rem 0;
+    padding: 0.6rem 1rem;
+    background: var(--soft-bg);
+    color: var(--ink);
+    font-style: italic;
+}
+
+body.rtl blockquote {
+    border-left: none;
+    border-right: 3px solid var(--accent);
+}
+
+code {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.05rem 0.35rem;
+    font-family: "JetBrains Mono", "Consolas", monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+pre code { background: none; border: none; padding: 0; }
+
+hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2rem 0;
+}
+
+a { color: var(--accent); }
+
+/* Exam-paper specific look for model papers */
+body.exam .crumb { border-bottom: 2px solid var(--ink); }
+body.exam h1 { text-align: center; border-bottom: none; }
+body.exam h1 + p { text-align: center; font-weight: 600; margin-top: -0.4rem; }
+
+/* Cover sheet table for the exam header (Roll No, Time, Marks) */
+body.exam table:first-of-type {
+    border: 2px solid var(--ink);
+    margin-bottom: 1.5rem;
+}
+body.exam table:first-of-type th,
+body.exam table:first-of-type td {
+    border: 1px solid var(--ink);
+}
+
+/* Print rules */
+@media print {
+    body {
+        padding: 1cm 1.5cm;
+        background: white;
+        max-width: none;
+    }
+    .crumb { display: none; }
+    h1 { page-break-before: avoid; }
+    h2 { page-break-after: avoid; }
+    table, blockquote, pre { page-break-inside: avoid; }
+    body.exam h2 { page-break-before: auto; }
+    a { color: var(--ink); text-decoration: none; }
+}
+
+@page {
+    size: A4;
+    margin: 1.5cm 1.7cm;
+}
+</style>
+</head>
+<body class="rtl">
+<div class="crumb">
+  <span><a href="../README.html">11th Class Prep Guide</a> &rsaquo; Urdu</span>
+  <span>BISE Abbottabad &middot; FSc Pre-Engineering</span>
+</div>
+<h1>اردو (لازمی) — گیارہویں جماعت</h1>
+<p>KPTBB / BISE Abbottabad · 100 نمبر · 3 گھنٹے · کوئی پریکٹیکل نہیں</p>
+<h2>پیپر کا خاکہ</h2>
+<table>
+<thead>
+<tr>
+<th>سیکشن</th>
+<th>نمبر</th>
+<th>فارمیٹ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>الف — کثیر الانتخابی سوالات (MCQs)</td>
+<td>10 × 1 = 10</td>
+<td>الفاظ، گرامر، فہمِ نثر</td>
+</tr>
+<tr>
+<td>ب — تشریح نثر</td>
+<td>10</td>
+<td>منتخب اقتباس کی تشریح</td>
+</tr>
+<tr>
+<td>ج — تشریح نظم</td>
+<td>10</td>
+<td>منتخب بند کی تشریح</td>
+</tr>
+<tr>
+<td>د — مختصر سوالات (نثر و نظم)</td>
+<td>20</td>
+<td>چھ میں سے کوئی پانچ</td>
+</tr>
+<tr>
+<td>ہ — گرامر</td>
+<td>10</td>
+<td>تذکیر و تانیث، واحد جمع، محاورے، ضرب الامثال</td>
+</tr>
+<tr>
+<td>و — خط / درخواست</td>
+<td>10</td>
+<td>ایک خط یا درخواست</td>
+</tr>
+<tr>
+<td>ز — تلخیص</td>
+<td>10</td>
+<td>عبارت کی تلخیص بعنوان</td>
+</tr>
+<tr>
+<td>ح — مضمون نویسی</td>
+<td>20</td>
+<td>چار میں سے ایک</td>
+</tr>
+</tbody>
+</table>
+<p>کل: <strong>100 نمبر</strong>۔</p>
+<h2>نصاب کی فہرست (KPTBB گیارہویں اردو لازمی)</h2>
+<h3>نثر (منتخب اسباق)</h3>
+<table>
+<thead>
+<tr>
+<th>نمبر</th>
+<th>عنوان</th>
+<th>مصنف</th>
+<th>اہمیت</th>
+<th>متوقع سوال</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>حمد</td>
+<td>علامہ اقبال</td>
+<td>High</td>
+<td>تشریح، مرکزی خیال</td>
+</tr>
+<tr>
+<td>2</td>
+<td>نعت</td>
+<td>___</td>
+<td>Med</td>
+<td>تشریح</td>
+</tr>
+<tr>
+<td>3</td>
+<td>پہلا انعام</td>
+<td>حجاب امتیاز علی</td>
+<td>High</td>
+<td>کہانی کا خلاصہ، کرداری تجزیہ</td>
+</tr>
+<tr>
+<td>4</td>
+<td>حسنِ سلوک</td>
+<td>محمد طفیل</td>
+<td>High</td>
+<td>پیغام، تشریحی اقتباس</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ہمدردی</td>
+<td>علامہ راشد الخیری</td>
+<td>Med</td>
+<td>اخلاقی پیغام</td>
+</tr>
+<tr>
+<td>6</td>
+<td>وفا کی دیوی</td>
+<td>اشفاق احمد</td>
+<td>High</td>
+<td>کرداری اور پیغام</td>
+</tr>
+<tr>
+<td>7</td>
+<td>شاعری</td>
+<td>سرسید احمد خان</td>
+<td>High</td>
+<td>سرسید کے خیالات</td>
+</tr>
+<tr>
+<td>8</td>
+<td>اخلاص</td>
+<td>مولانا الطاف حسین حالی</td>
+<td>Med</td>
+<td>تشریح</td>
+</tr>
+<tr>
+<td>9</td>
+<td>کایا کلپ</td>
+<td>پروفیسر کرّار حسین</td>
+<td>Med</td>
+<td>بنیادی پیغام</td>
+</tr>
+<tr>
+<td>10</td>
+<td>غلبہ روم</td>
+<td>علامہ اقبال (نثر)</td>
+<td>Low</td>
+<td>تشریح</td>
+</tr>
+</tbody>
+</table>
+<h3>نظم و غزل</h3>
+<table>
+<thead>
+<tr>
+<th>نمبر</th>
+<th>عنوان</th>
+<th>شاعر</th>
+<th>اہمیت</th>
+<th>متوقع سوال</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>حمدیہ نظم</td>
+<td>___</td>
+<td>High</td>
+<td>بند کی تشریح</td>
+</tr>
+<tr>
+<td>2</td>
+<td>نعتیہ نظم</td>
+<td>___</td>
+<td>High</td>
+<td>بند کی تشریح</td>
+</tr>
+<tr>
+<td>3</td>
+<td>شکوہ (منتخب بند)</td>
+<td>علامہ اقبال</td>
+<td>High</td>
+<td>تشریح، شعر کی وضاحت</td>
+</tr>
+<tr>
+<td>4</td>
+<td>جوابِ شکوہ (منتخب بند)</td>
+<td>علامہ اقبال</td>
+<td>High</td>
+<td>تشریح</td>
+</tr>
+<tr>
+<td>5</td>
+<td>غزلِ غالب</td>
+<td>مرزا غالب</td>
+<td>High</td>
+<td>شعر کی تشریح</td>
+</tr>
+<tr>
+<td>6</td>
+<td>غزلِ میر</td>
+<td>میر تقی میر</td>
+<td>Med</td>
+<td>تشریح</td>
+</tr>
+<tr>
+<td>7</td>
+<td>غزلِ اقبال</td>
+<td>علامہ اقبال</td>
+<td>High</td>
+<td>شعر کی تشریح</td>
+</tr>
+<tr>
+<td>8</td>
+<td>غزلِ حالی</td>
+<td>الطاف حسین حالی</td>
+<td>Med</td>
+<td>تشریح</td>
+</tr>
+<tr>
+<td>9</td>
+<td>غزلِ فیض</td>
+<td>فیض احمد فیض</td>
+<td>Med</td>
+<td>تشریح</td>
+</tr>
+<tr>
+<td>10</td>
+<td>غزلِ احمد فراز</td>
+<td>احمد فراز</td>
+<td>Med</td>
+<td>تشریح</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>اشارہ:</strong> بورڈ ہر سال نظم/غزل سے کم از کم ایک تشریحی سوال ضرور پوچھتا ہے۔ شاعر کا تعارف، مرکزی خیال، اور دو مشکل الفاظ کے معانی یاد رکھنا لازم ہے۔</p>
+</blockquote>
+<h2>گرامر کی توجہ طلب اقسام</h2>
+<table>
+<thead>
+<tr>
+<th>موضوع</th>
+<th>اہمیت</th>
+<th>کیا پوچھا جاتا ہے</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>تذکیر و تانیث</td>
+<td>High</td>
+<td>الفاظ کی جنس بتائیں</td>
+</tr>
+<tr>
+<td>واحد جمع</td>
+<td>High</td>
+<td>لفظ کی جمع لکھیں</td>
+</tr>
+<tr>
+<td>محاورے</td>
+<td>High</td>
+<td>جملوں میں استعمال یا معنی</td>
+</tr>
+<tr>
+<td>ضرب الامثال</td>
+<td>High</td>
+<td>معنی + موقع استعمال</td>
+</tr>
+<tr>
+<td>الفاظِ متضاد</td>
+<td>Med</td>
+<td>متضاد لکھیں</td>
+</tr>
+<tr>
+<td>الفاظِ مترادف</td>
+<td>Med</td>
+<td>مترادف بتائیں</td>
+</tr>
+<tr>
+<td>اعراب</td>
+<td>Med</td>
+<td>الفاظ پر اعراب لگائیں</td>
+</tr>
+</tbody>
+</table>
+<h2>خط و درخواست کے متوقع موضوعات</h2>
+<ul>
+<li><strong>خط</strong> — والدین کے نام صحت یا کامیابی کی خبر دیتے ہوئے، چھوٹے بھائی کو نصیحت، دوست کو شادی کی دعوت۔</li>
+<li><strong>درخواست</strong> — پرنسپل کے نام: فیس میں رعایت، ضمانتی سرٹیفکیٹ، چھٹی کی درخواست، کتب خانہ سے کتب جاری کرنے کی درخواست۔</li>
+</ul>
+<h2>مضمون نویسی کے یقینی موضوعات</h2>
+<p>ہر سال درج ذیل میں سے کوئی نہ کوئی موضوع ضرور آتا ہے:</p>
+<ol>
+<li><strong>علامہ اقبال</strong> — شاعرِ مشرق</li>
+<li><strong>قائد اعظم محمد علی جناح</strong></li>
+<li><strong>میرا پیارا وطن پاکستان</strong></li>
+<li><strong>علم کی اہمیت / علم کا نور</strong></li>
+<li><strong>محنت کی برکات</strong></li>
+<li><strong>والدین کا احترام</strong></li>
+<li><strong>اخلاق کی اہمیت</strong></li>
+<li><strong>ماحولیاتی آلودگی</strong></li>
+<li><strong>انٹرنیٹ کے فائدے اور نقصانات</strong></li>
+<li><strong>نظم و ضبط</strong></li>
+</ol>
+<blockquote>
+<p>ان دس موضوعات میں سے پانچ مکمل لکھنے کی مشق کر لیں — سو فیصد کوریج۔</p>
+</blockquote>
+<h2>طلبہ کی عام غلطیاں</h2>
+<ul>
+<li>تشریح میں <strong>شاعر اور نظم کا تعارف</strong> نہ لکھنا — 2 نمبر کا نقصان۔</li>
+<li>خط میں <strong>تاریخ، پتہ، مہر بانی فرما</strong> کا فارمیٹ غلط ہونا۔</li>
+<li><strong>محاورے کا غلط استعمال</strong> — معنی الٹا بتا دینا (مثلاً "آنکھ کا تارا" کو منفی سمجھنا)۔</li>
+<li><strong>مضمون میں عنوانات تقسیم نہ کرنا</strong> — پیراگراف ایک لمبا چلتا رہتا ہے، نمبر کم ملتے ہیں۔</li>
+<li><strong>تلخیص کا حجم کم نہ کرنا</strong> — اصل کا ایک تہائی ہی ہونا چاہیے۔</li>
+<li><strong>شعر کو پہلے درست نقل</strong> نہ کرنا، جس سے تشریح غلط ہو جاتی ہے۔</li>
+</ul>
+<h2>ترتیبِ تیاری (high → low return)</h2>
+<ol>
+<li>مضمون: 5 موضوعات کی مکمل تیاری → 20 نمبر یقینی۔</li>
+<li>خط/درخواست: ایک ایک نمونہ یاد کریں → 10 نمبر۔</li>
+<li>تشریح نثر و نظم: ہر سبق کے 2 اہم اقتباسات تیار کریں → 20 نمبر۔</li>
+<li>مختصر سوالات: ہر سبق کے 4 اہم سوالات → 20 نمبر۔</li>
+<li>گرامر: 50 الفاظ کے تذکیر/تانیث، 50 واحد جمع، 30 محاورے، 20 ضرب الامثال یاد کریں → 10 نمبر۔</li>
+<li>تلخیص: ہفتہ میں دو پیراگرافس کی مشق → 10 نمبر۔</li>
+</ol>
+<h2>مفید فارمیٹس</h2>
+<h3>درخواست کا نمونہ</h3>
+<pre><code>بخدمت جناب پرنسپل صاحب،
+گورنمنٹ ہائر سیکنڈری اسکول،
+ایبٹ آباد۔
+
+موضوع: ____ کی درخواست
+
+جناب عالی!
+گزارش ہے کہ ____ ۔
+لہٰذا آپ سے گزارش ہے کہ ____ کی منظوری عطا فرمائیں، آپ کی بڑی مہربانی ہوگی۔
+
+آپ کا تابع دار،
+نام: ____
+جماعت: یازدہم
+رول نمبر: ____
+تاریخ: ____
+</code></pre>
+<h3>خط کا نمونہ</h3>
+<pre><code>[پتہ]
+[تاریخ]
+
+پیارے بھائی،
+اسلام علیکم!
+
+[تین پیراگراف: حال احوال، اصل پیغام، اختتامیہ]
+
+والسلام،
+آپ کا بھائی،
+[نام]
+</code></pre>
+<h3>مضمون کی ترتیب (5 پیراگراف)</h3>
+<ol>
+<li><strong>تعارف</strong> — موضوع کا تعارف، اشعار سے ابتدا اچھی۔</li>
+<li><strong>پہلا نکتہ</strong> — وضاحت + مثال۔</li>
+<li><strong>دوسرا نکتہ</strong> — وضاحت + مثال۔</li>
+<li><strong>تیسرا نکتہ</strong> — وضاحت + مثال۔</li>
+<li><strong>اختتامیہ</strong> — نتیجہ + شعر یا اقتباس۔</li>
+</ol>
+</body>
+</html>

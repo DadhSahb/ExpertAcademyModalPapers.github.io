@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Model Paper 1 — Mathematics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --rule: #cfcfcf;
+    --accent: #0b5394;
+    --soft-bg: #f6f6f4;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+    margin: 0;
+    padding: 2.5rem clamp(1rem, 5vw, 4rem);
+    font-family: "Source Serif Pro", "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    background: #fdfdfb;
+    line-height: 1.55;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.rtl {
+    direction: rtl;
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Urdu Typesetting",
+                 "Arial Unicode MS", serif;
+    font-size: 1.15rem;
+    line-height: 2.1;
+}
+
+.crumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+.crumb a { color: var(--accent); text-decoration: none; }
+.crumb a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5 {
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+}
+
+body.rtl h1, body.rtl h2, body.rtl h3, body.rtl h4 {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Arial Unicode MS", serif;
+}
+
+h1 { font-size: 2rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.4rem; }
+h2 { font-size: 1.45rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; color: var(--accent); }
+
+p, ul, ol { margin: 0.6rem 0; }
+
+ul, ol { padding-left: 1.6rem; }
+body.rtl ul, body.rtl ol { padding-right: 1.6rem; padding-left: 0; }
+
+li { margin: 0.3rem 0; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+body.rtl table { font-size: 1.05rem; }
+
+th, td {
+    border: 1px solid var(--rule);
+    padding: 0.55rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+body.rtl th, body.rtl td { text-align: right; }
+
+th {
+    background: var(--soft-bg);
+    font-weight: 600;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+body.rtl th {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", serif;
+}
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1rem 0;
+    padding: 0.6rem 1rem;
+    background: var(--soft-bg);
+    color: var(--ink);
+    font-style: italic;
+}
+
+body.rtl blockquote {
+    border-left: none;
+    border-right: 3px solid var(--accent);
+}
+
+code {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.05rem 0.35rem;
+    font-family: "JetBrains Mono", "Consolas", monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+pre code { background: none; border: none; padding: 0; }
+
+hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2rem 0;
+}
+
+a { color: var(--accent); }
+
+/* Exam-paper specific look for model papers */
+body.exam .crumb { border-bottom: 2px solid var(--ink); }
+body.exam h1 { text-align: center; border-bottom: none; }
+body.exam h1 + p { text-align: center; font-weight: 600; margin-top: -0.4rem; }
+
+/* Cover sheet table for the exam header (Roll No, Time, Marks) */
+body.exam table:first-of-type {
+    border: 2px solid var(--ink);
+    margin-bottom: 1.5rem;
+}
+body.exam table:first-of-type th,
+body.exam table:first-of-type td {
+    border: 1px solid var(--ink);
+}
+
+/* Print rules */
+@media print {
+    body {
+        padding: 1cm 1.5cm;
+        background: white;
+        max-width: none;
+    }
+    .crumb { display: none; }
+    h1 { page-break-before: avoid; }
+    h2 { page-break-after: avoid; }
+    table, blockquote, pre { page-break-inside: avoid; }
+    body.exam h2 { page-break-before: auto; }
+    a { color: var(--ink); text-decoration: none; }
+}
+
+@page {
+    size: A4;
+    margin: 1.5cm 1.7cm;
+}
+</style>
+</head>
+<body class="exam">
+<div class="crumb">
+  <span><a href="../README.html">11th Class Prep Guide</a> &rsaquo; Mathematics</span>
+  <span>BISE Abbottabad &middot; FSc Pre-Engineering</span>
+</div>
+<h1>Model Paper 1 — Mathematics</h1>
+<p><strong>Board of Intermediate and Secondary Education, Abbottabad</strong>
+<strong>HSSC Part-I (FSc Pre-Engineering) — Annual Examination</strong></p>
+<table>
+<thead>
+<tr>
+<th>Roll No.</th>
+<th><strong><em>_</em></strong><strong><em>_</em></strong>____</th>
+<th>Group</th>
+<th>FSc Pre-Engineering</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Subject</strong></td>
+<td>Mathematics</td>
+<td><strong>Time Allowed</strong></td>
+<td>3 hours</td>
+</tr>
+<tr>
+<td><strong>Total Marks</strong></td>
+<td>100</td>
+<td><strong>Sections</strong></td>
+<td>A · B · C</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Instructions</strong>
+1. Section A is to be attempted on the OMR/answer sheet provided. Use only a black or blue ball-point pen. Cutting/overwriting/erasing in MCQs will be considered as wrong.
+2. Sections B and C are to be answered in the answer book.
+3. Use of scientific calculator is <strong>allowed</strong>.
+4. Draw neat, labelled diagrams wherever required.</p>
+<hr>
+<h2>Section A — Multiple Choice Questions (20 marks)</h2>
+<blockquote>
+<p>Encircle the correct option. Each question carries 1 mark.</p>
+</blockquote>
+<ol>
+<li>
+<p>The conjugate of <code>(3 − 2i)</code> is:
+   (a) <code>3 + 2i</code>  (b) <code>−3 − 2i</code>  (c) <code>−3 + 2i</code>  (d) <code>2 − 3i</code></p>
+</li>
+<li>
+<p>If <code>A</code> is a square matrix and <code>|A| = 0</code>, then <code>A</code> is called:
+   (a) Identity  (b) Singular  (c) Symmetric  (d) Orthogonal</p>
+</li>
+<li>
+<p>The solution of <code>2x + 1 = 0</code> is:
+   (a) <code>−1/2</code>  (b) <code>1/2</code>  (c) <code>−2</code>  (d) <code>0</code></p>
+</li>
+<li>
+<p>Discriminant of <code>ax² + bx + c = 0</code> is:
+   (a) <code>b² − 4ac</code>  (b) <code>b² + 4ac</code>  (c) <code>4ac − b²</code>  (d) <code>−b² − 4ac</code></p>
+</li>
+<li>
+<p>Number of terms in the expansion of <code>(a + b)ⁿ</code> is:
+   (a) <code>n</code>  (b) <code>n − 1</code>  (c) <code>n + 1</code>  (d) <code>2n</code></p>
+</li>
+<li>
+<p>The 10th term of the A.P. <code>2, 5, 8, …</code> is:
+   (a) <code>27</code>  (b) <code>29</code>  (c) <code>31</code>  (d) <code>30</code></p>
+</li>
+<li>
+<p>The sum to infinity of the G.P. <code>1, 1/2, 1/4, …</code> is:
+   (a) <code>1</code>  (b) <code>2</code>  (c) <code>3/2</code>  (d) <code>1/2</code></p>
+</li>
+<li>
+<p><code>n!</code> equals:
+   (a) <code>n × (n−1)!</code>  (b) <code>(n−1)!</code>  (c) <code>n + (n−1)!</code>  (d) <code>n × n</code></p>
+</li>
+<li>
+<p>Probability of getting a head when an unbiased coin is tossed:
+   (a) <code>0</code>  (b) <code>1</code>  (c) <code>1/2</code>  (d) <code>2/3</code></p>
+</li>
+<li>
+<p><code>C(n, r) =</code> :
+    (a) <code>n!/(n−r)!</code>  (b) <code>n!/(r!(n−r)!)</code>  (c) <code>r!/(n!(n−r)!)</code>  (d) <code>(n−r)!/r!</code></p>
+</li>
+<li>
+<p>One radian is equal to (approximately):
+    (a) <code>45°</code>  (b) <code>60°</code>  (c) <code>57.3°</code>  (d) <code>90°</code></p>
+</li>
+<li>
+<p><code>sin 30° + cos 60° =</code> :
+    (a) <code>1</code>  (b) <code>0</code>  (c) <code>1/2</code>  (d) <code>√3/2</code></p>
+</li>
+<li>
+<p><code>cos(A − B) =</code> :
+    (a) <code>cos A cos B − sin A sin B</code>  (b) <code>cos A cos B + sin A sin B</code>  (c) <code>sin A cos B + cos A sin B</code>  (d) <code>sin A cos B − cos A sin B</code></p>
+</li>
+<li>
+<p>Period of <code>tan x</code> is:
+    (a) <code>π/2</code>  (b) <code>π</code>  (c) <code>2π</code>  (d) <code>4π</code></p>
+</li>
+<li>
+<p>In a triangle ABC, <code>a/sin A =</code> :
+    (a) <code>2R</code>  (b) <code>R</code>  (c) <code>R/2</code>  (d) <code>1</code></p>
+</li>
+<li>
+<p>Range of <code>sin⁻¹ x</code> is:
+    (a) <code>[0, π]</code>  (b) <code>[−π/2, π/2]</code>  (c) <code>[−π, π]</code>  (d) <code>[0, 2π]</code></p>
+</li>
+<li>
+<p>The general solution of <code>sin θ = 0</code> is:
+    (a) <code>θ = nπ</code>  (b) <code>θ = (2n+1) π/2</code>  (c) <code>θ = 2nπ</code>  (d) <code>θ = π/4</code></p>
+</li>
+<li>
+<p>If <code>A ∪ B = A</code>, then:
+    (a) <code>B ⊆ A</code>  (b) <code>A ⊆ B</code>  (c) <code>A = B</code>  (d) <code>A ∩ B = ∅</code></p>
+</li>
+<li>
+<p><code>(1 + i)² =</code> :
+    (a) <code>0</code>  (b) <code>2i</code>  (c) <code>−2i</code>  (d) <code>2</code></p>
+</li>
+<li>
+<p>The middle term in the expansion of <code>(a + b)⁸</code> is the:
+    (a) 4th  (b) 5th  (c) 6th  (d) 8th</p>
+</li>
+</ol>
+<hr>
+<h2>Section B — Short Response Questions (40 marks)</h2>
+<blockquote>
+<p>Attempt any <strong>TEN (10)</strong> questions. Each question carries <strong>4 marks</strong>.</p>
+</blockquote>
+<ol>
+<li>Find the multiplicative inverse of <code>3 − 4i</code> and express the answer in <code>a + bi</code> form.</li>
+<li>Show that <code>(A')' = A</code> for any matrix A. Verify with a 2×2 example.</li>
+<li>Solve <code>x⁴ − 5x² + 4 = 0</code>.</li>
+<li>Resolve <code>(7x + 3) / [(x + 1)(x − 2)]</code> into partial fractions.</li>
+<li>Find the 12th term of an A.P. whose 4th term is 13 and 9th term is 28.</li>
+<li>Find the sum of the geometric series <code>2 + 6 + 18 + … + 4374</code>.</li>
+<li>How many ways can the letters of the word <strong>EQUATION</strong> be arranged?</li>
+<li>A card is drawn from a well-shuffled deck of 52. Find P(king or queen).</li>
+<li>Use mathematical induction to prove <code>1 + 2 + 3 + … + n = n(n+1)/2</code> for <code>n = 1, 2</code>.</li>
+<li>Find the term independent of <code>x</code> in the expansion of <code>(x + 1/x)¹⁰</code>.</li>
+<li>Convert <code>225°</code> into radian measure.</li>
+<li>Prove that <code>sin(A + B) sin(A − B) = sin²A − sin²B</code>.</li>
+<li>Solve the triangle in which <code>a = 7 cm</code>, <code>b = 5 cm</code>, <code>C = 60°</code>.</li>
+<li>Sketch the graph of <code>y = 2 sin x</code> for <code>0 ≤ x ≤ 2π</code>. Mark the period and amplitude.</li>
+<li>Find the principal value of <code>sin⁻¹(−1/2)</code>.</li>
+<li>Solve <code>2 cos² θ − 1 = 0</code> for <code>0 ≤ θ &lt; 2π</code>.</li>
+<li>Show that <code>tan(45° + A) · tan(45° − A) = 1</code>.</li>
+<li>Define a group. Show that <code>(Z, +)</code> is a group.</li>
+<li>Prove that <code>nC(r) + nC(r−1) = (n+1)C(r)</code>.</li>
+<li>Find <code>A⁻¹</code> if <code>A = [[2, 1], [3, 4]]</code>.</li>
+<li>Verify De Morgan's law <code>(A ∪ B)' = A' ∩ B'</code> for <code>A = {1, 2, 3}</code>, <code>B = {2, 4, 6}</code>, universal <code>U = {1..6}</code>.</li>
+</ol>
+<hr>
+<h2>Section C — Long Response Questions (40 marks)</h2>
+<blockquote>
+<p>Attempt <strong>all FIVE (5)</strong> questions. Each carries <strong>8 marks</strong>. Internal choice given.</p>
+</blockquote>
+<p><strong>Q22.</strong>
+<strong>(a)</strong> Solve the following system of equations using matrix inversion method: <code>x + y + z = 6</code>, <code>2x − y + z = 3</code>, <code>x + 2y − z = 2</code>. <strong>(5)</strong>
+<strong>(b)</strong> Find the rank of the matrix <code>[[1, 2, 3], [2, 4, 6], [3, 6, 9]]</code>. <strong>(3)</strong></p>
+<p><strong>OR</strong></p>
+<p><strong>(a)</strong> Solve the system using Cramer's rule: <code>2x + 3y = 5</code>, <code>4x − y = 1</code>. <strong>(5)</strong>
+<strong>(b)</strong> Show that any matrix multiplied by its inverse gives the identity matrix, using a 2×2 example. <strong>(3)</strong></p>
+<hr>
+<p><strong>Q23.</strong>
+<strong>(a)</strong> If the roots of the equation <code>x² + px + q = 0</code> are <code>α</code> and <code>β</code>, find the equation whose roots are <code>α/β</code> and <code>β/α</code>. <strong>(5)</strong>
+<strong>(b)</strong> Find the value of <code>k</code> for which the equation <code>kx² − 8x + 4 = 0</code> has equal roots. <strong>(3)</strong></p>
+<p><strong>OR</strong></p>
+<p><strong>(a)</strong> Solve <code>√(2x + 3) + √(x + 1) = 5</code>. <strong>(5)</strong>
+<strong>(b)</strong> Discuss the nature of roots of <code>3x² − 5x + 4 = 0</code>. <strong>(3)</strong></p>
+<hr>
+<p><strong>Q24.</strong>
+<strong>(a)</strong> The 5th and 9th terms of an A.P. are 11 and 23 respectively. Find the sum of the first 20 terms. <strong>(5)</strong>
+<strong>(b)</strong> Sum the geometric series <code>5 + 10 + 20 + … to 8 terms</code>. <strong>(3)</strong></p>
+<p><strong>OR</strong></p>
+<p><strong>(a)</strong> Use mathematical induction to prove <code>1² + 2² + 3² + … + n² = n(n+1)(2n+1)/6</code>. <strong>(5)</strong>
+<strong>(b)</strong> Find the middle term in the expansion of <code>(2x − 1/x)⁶</code>. <strong>(3)</strong></p>
+<hr>
+<p><strong>Q25.</strong>
+<strong>(a)</strong> Prove that <code>cos(A + B) cos(A − B) = cos²A − sin²B</code>. <strong>(4)</strong>
+<strong>(b)</strong> Prove that <code>sin 3A = 3 sin A − 4 sin³A</code>. <strong>(4)</strong></p>
+<p><strong>OR</strong></p>
+<p><strong>(a)</strong> Prove that <code>tan(A + B) = (tan A + tan B) / (1 − tan A tan B)</code>. <strong>(4)</strong>
+<strong>(b)</strong> Without using calculator, find the exact value of <code>cos 75°</code>. <strong>(4)</strong></p>
+<hr>
+<p><strong>Q26.</strong>
+<strong>(a)</strong> In a triangle ABC, <code>a = 13 cm</code>, <code>b = 14 cm</code>, <code>c = 15 cm</code>. Find the area, in-radius <code>r</code>, and circumradius <code>R</code>. <strong>(5)</strong>
+<strong>(b)</strong> Solve <code>tan x = √3</code> for <code>0 ≤ x ≤ 2π</code>. <strong>(3)</strong></p>
+<p><strong>OR</strong></p>
+<p><strong>(a)</strong> From a point on a horizontal plane, the angle of elevation of the top of a tower 50 m high is 30°. Find the distance of the point from the foot of the tower. <strong>(5)</strong>
+<strong>(b)</strong> Find the principal value of <code>cos⁻¹(−√3/2)</code>. <strong>(3)</strong></p>
+<hr>
+<p><em>— End of paper —</em></p>
+</body>
+</html>

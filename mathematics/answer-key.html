@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Answer Key & Marking Scheme — Mathematics Model Paper 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --rule: #cfcfcf;
+    --accent: #0b5394;
+    --soft-bg: #f6f6f4;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+    margin: 0;
+    padding: 2.5rem clamp(1rem, 5vw, 4rem);
+    font-family: "Source Serif Pro", "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    background: #fdfdfb;
+    line-height: 1.55;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.rtl {
+    direction: rtl;
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Urdu Typesetting",
+                 "Arial Unicode MS", serif;
+    font-size: 1.15rem;
+    line-height: 2.1;
+}
+
+.crumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+.crumb a { color: var(--accent); text-decoration: none; }
+.crumb a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5 {
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+}
+
+body.rtl h1, body.rtl h2, body.rtl h3, body.rtl h4 {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", "Arial Unicode MS", serif;
+}
+
+h1 { font-size: 2rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.4rem; }
+h2 { font-size: 1.45rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; color: var(--accent); }
+
+p, ul, ol { margin: 0.6rem 0; }
+
+ul, ol { padding-left: 1.6rem; }
+body.rtl ul, body.rtl ol { padding-right: 1.6rem; padding-left: 0; }
+
+li { margin: 0.3rem 0; }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+body.rtl table { font-size: 1.05rem; }
+
+th, td {
+    border: 1px solid var(--rule);
+    padding: 0.55rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+body.rtl th, body.rtl td { text-align: right; }
+
+th {
+    background: var(--soft-bg);
+    font-weight: 600;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+body.rtl th {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu",
+                 "Alvi Nastaleeq", serif;
+}
+
+blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1rem 0;
+    padding: 0.6rem 1rem;
+    background: var(--soft-bg);
+    color: var(--ink);
+    font-style: italic;
+}
+
+body.rtl blockquote {
+    border-left: none;
+    border-right: 3px solid var(--accent);
+}
+
+code {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.05rem 0.35rem;
+    font-family: "JetBrains Mono", "Consolas", monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background: var(--soft-bg);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+pre code { background: none; border: none; padding: 0; }
+
+hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2rem 0;
+}
+
+a { color: var(--accent); }
+
+/* Exam-paper specific look for model papers */
+body.exam .crumb { border-bottom: 2px solid var(--ink); }
+body.exam h1 { text-align: center; border-bottom: none; }
+body.exam h1 + p { text-align: center; font-weight: 600; margin-top: -0.4rem; }
+
+/* Cover sheet table for the exam header (Roll No, Time, Marks) */
+body.exam table:first-of-type {
+    border: 2px solid var(--ink);
+    margin-bottom: 1.5rem;
+}
+body.exam table:first-of-type th,
+body.exam table:first-of-type td {
+    border: 1px solid var(--ink);
+}
+
+/* Print rules */
+@media print {
+    body {
+        padding: 1cm 1.5cm;
+        background: white;
+        max-width: none;
+    }
+    .crumb { display: none; }
+    h1 { page-break-before: avoid; }
+    h2 { page-break-after: avoid; }
+    table, blockquote, pre { page-break-inside: avoid; }
+    body.exam h2 { page-break-before: auto; }
+    a { color: var(--ink); text-decoration: none; }
+}
+
+@page {
+    size: A4;
+    margin: 1.5cm 1.7cm;
+}
+</style>
+</head>
+<body class="">
+<div class="crumb">
+  <span><a href="../README.html">11th Class Prep Guide</a> &rsaquo; Mathematics</span>
+  <span>BISE Abbottabad &middot; FSc Pre-Engineering</span>
+</div>
+<h1>Answer Key &amp; Marking Scheme — Mathematics Model Paper 1</h1>
+<h2>Section A — MCQ key</h2>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th>Ans</th>
+<th>Q</th>
+<th>Ans</th>
+<th>Q</th>
+<th>Ans</th>
+<th>Q</th>
+<th>Ans</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>a</td>
+<td>6</td>
+<td>b</td>
+<td>11</td>
+<td>c</td>
+<td>16</td>
+<td>b</td>
+</tr>
+<tr>
+<td>2</td>
+<td>b</td>
+<td>7</td>
+<td>b</td>
+<td>12</td>
+<td>a</td>
+<td>17</td>
+<td>a</td>
+</tr>
+<tr>
+<td>3</td>
+<td>a</td>
+<td>8</td>
+<td>a</td>
+<td>13</td>
+<td>b</td>
+<td>18</td>
+<td>a</td>
+</tr>
+<tr>
+<td>4</td>
+<td>a</td>
+<td>9</td>
+<td>c</td>
+<td>14</td>
+<td>b</td>
+<td>19</td>
+<td>b</td>
+</tr>
+<tr>
+<td>5</td>
+<td>c</td>
+<td>10</td>
+<td>b</td>
+<td>15</td>
+<td>a</td>
+<td>20</td>
+<td>b</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total: 20 / 20.</strong></p>
+<hr>
+<h2>Section B — Short Response (4 marks each, attempt any 10)</h2>
+<p><strong>B1.</strong> Multiplicative inverse of <code>3 − 4i</code>:
+<code>1/(3 − 4i) × (3 + 4i)/(3 + 4i) = (3 + 4i)/(9 + 16) = 3/25 + (4/25)i</code>. <em>(2 marks rationalisation, 2 marks final form.)</em></p>
+<p><strong>B2.</strong> <code>(A')' = A</code>. Take <code>A = [[1,2],[3,4]]</code>, then <code>A' = [[1,3],[2,4]]</code>, <code>(A')' = [[1,2],[3,4]] = A</code>. <em>(1 mark statement, 3 marks verification.)</em></p>
+<p><strong>B3.</strong> Let <code>y = x²</code>. Then <code>y² − 5y + 4 = 0 → (y−1)(y−4) = 0 → y = 1 or 4 → x = ±1, ±2</code>. <em>(2 marks substitution, 2 marks roots.)</em></p>
+<p><strong>B4.</strong> <code>(7x + 3)/[(x+1)(x−2)] = A/(x+1) + B/(x−2)</code>. Cover-up: <code>A = (7(−1)+3)/(−1−2) = −4/−3 = 4/3</code>; <code>B = (7(2)+3)/(2+1) = 17/3</code>. Answer: <code>4/[3(x+1)] + 17/[3(x−2)]</code>. <em>(2 marks setup, 2 marks values.)</em></p>
+<p><strong>B5.</strong> A.P.: <code>aₙ = a + (n−1)d</code>. From <code>a + 3d = 13</code>, <code>a + 8d = 28</code> → <code>5d = 15 → d = 3, a = 4</code>. So <code>a₁₂ = 4 + 11(3) = 37</code>. <em>(2 marks system, 2 marks answer.)</em></p>
+<p><strong>B6.</strong> G.P.: <code>a = 2</code>, <code>r = 3</code>, <code>aₙ = 4374</code>. <code>2 · 3ⁿ⁻¹ = 4374 → 3ⁿ⁻¹ = 2187 = 3⁷ → n = 8</code>. <code>S₈ = 2(3⁸ − 1)/(3 − 1) = (6561 − 1) = 6560</code>. <em>(2 marks find n, 2 marks sum.)</em></p>
+<p><strong>B7.</strong> EQUATION has 8 distinct letters → <code>8! = 40320</code> arrangements. <em>(1 mark count, 3 marks compute.)</em></p>
+<p><strong>B8.</strong> P(king) = 4/52, P(queen) = 4/52, mutually exclusive → P = 8/52 = <strong>2/13</strong>. <em>(2 marks events, 2 marks answer.)</em></p>
+<p><strong>B9.</strong> <em>n = 1:</em> LHS = 1, RHS = 1·2/2 = 1 ✓. <em>n = 2:</em> LHS = 1 + 2 = 3, RHS = 2·3/2 = 3 ✓. <em>(2 marks each.)</em></p>
+<p><strong>B10.</strong> <code>Tᵣ₊₁ = C(10, r) · x¹⁰⁻ʳ · (1/x)ʳ = C(10, r) x¹⁰⁻²ʳ</code>. For independence, <code>10 − 2r = 0 → r = 5</code>. Term = <code>C(10, 5) = 252</code>. <em>(2 marks setup, 2 marks compute.)</em></p>
+<p><strong>B11.</strong> <code>225° × π/180 = 5π/4 rad</code>. <em>(2 marks conversion factor, 2 marks answer.)</em></p>
+<p><strong>B12.</strong> LHS = <code>(sin A cos B + cos A sin B)(sin A cos B − cos A sin B) = sin²A cos²B − cos²A sin²B</code>. Substitute <code>cos²B = 1 − sin²B</code> and <code>cos²A = 1 − sin²A</code> and simplify → <code>sin²A − sin²B</code>. <em>(2 marks expand, 2 marks simplify.)</em></p>
+<p><strong>B13.</strong> Use law of cosines: <code>c² = a² + b² − 2ab cos C = 49 + 25 − 70(0.5) = 39 → c ≈ 6.24 cm</code>. Then <code>sin A / 7 = sin 60° / 6.24 → A ≈ 76.0°</code>. So <code>B = 180 − 60 − 76 = 44°</code>. <em>(3 marks for c, 1 mark each angle.)</em></p>
+<p><strong>B14.</strong> Period = 2π, amplitude = 2. Sketch a sine wave touching y = ±2 with one full cycle in 0 to 2π. <em>(2 marks correct shape, 2 marks labels.)</em></p>
+<p><strong>B15.</strong> <code>sin⁻¹(−1/2) = −π/6</code> (principal value). <em>(4 marks.)</em></p>
+<p><strong>B16.</strong> <code>cos² θ = 1/2 → cos θ = ±1/√2 → θ = π/4, 3π/4, 5π/4, 7π/4</code>. <em>(2 marks setup, 2 marks all four values.)</em></p>
+<p><strong>B17.</strong> <code>tan(45+A) tan(45−A) = [(1+tan A)/(1−tan A)] · [(1−tan A)/(1+tan A)] = 1</code>. <em>(4 marks, full simplification.)</em></p>
+<p><strong>B18.</strong> Group: a non-empty set with binary operation satisfying closure, associativity, identity, and inverse. For <code>(Z, +)</code>: closure (sum of integers is integer ✓), associative ✓, identity = 0 ✓, inverse of <code>a</code> is <code>−a</code> ✓. Hence <code>(Z, +)</code> is a group. <em>(2 marks definition, 2 marks verification.)</em></p>
+<p><strong>B19.</strong> <code>nC(r) + nC(r−1) = n!/[r!(n−r)!] + n!/[(r−1)!(n−r+1)!]</code>. Take LCD <code>r!(n−r+1)!</code> and combine → <code>(n+1)!/[r!(n+1−r)!] = (n+1)C(r)</code>. <em>(2 marks LCD, 2 marks simplification.)</em></p>
+<p><strong>B20.</strong> <code>det(A) = 8 − 3 = 5</code>. <code>A⁻¹ = (1/5) · [[4, −1], [−3, 2]] = [[4/5, −1/5], [−3/5, 2/5]]</code>. <em>(2 marks det, 2 marks adjoint &amp; answer.)</em></p>
+<p><strong>B21.</strong> <code>A ∪ B = {1,2,3,4,6}</code>, <code>(A ∪ B)' = {5}</code>. <code>A' = {4,5,6}</code>, <code>B' = {1,3,5}</code>, <code>A' ∩ B' = {5}</code>. Equal ✓. <em>(2 marks LHS, 2 marks RHS.)</em></p>
+<hr>
+<h2>Section C — Long Response (8 marks each)</h2>
+<p><strong>Q22 (main).</strong>
+<strong>(a)</strong> Coefficient matrix <code>A = [[1,1,1],[2,−1,1],[1,2,−1]]</code>. <code>det(A) = 1(1−2) − 1(−2−1) + 1(4+1) = −1 + 3 + 5 = 7</code>.
+Compute <code>A⁻¹</code> (adjoint / det), then <code>X = A⁻¹ B</code> where <code>B = [6, 3, 2]ᵀ</code> → solution <code>x = 1, y = 2, z = 3</code>.
+<em>(2 marks det, 2 marks adjoint, 1 mark for X.)</em>
+<strong>(b)</strong> Notice rows of the matrix are scalar multiples (R₂ = 2R₁, R₃ = 3R₁) → rank = <strong>1</strong>. <em>(2 marks observation, 1 mark conclusion.)</em></p>
+<p><strong>Q23 (main).</strong>
+<strong>(a)</strong> <code>α + β = −p</code>, <code>αβ = q</code>. New roots <code>α/β + β/α = (α² + β²)/(αβ) = ((α+β)² − 2αβ)/αβ = (p² − 2q)/q</code>. Product <code>α/β · β/α = 1</code>. New equation: <code>qx² − (p² − 2q)x + q = 0</code>. <em>(2 marks sums/products, 2 marks identity, 1 mark final form.)</em>
+<strong>(b)</strong> Equal roots ⟺ discriminant = 0 → <code>64 − 16k = 0 → k = 4</code>. <em>(3 marks.)</em></p>
+<p><strong>Q24 (main).</strong>
+<strong>(a)</strong> <code>a + 4d = 11</code>, <code>a + 8d = 23 → 4d = 12 → d = 3, a = −1</code>. <code>S₂₀ = 20/2 [2(−1) + 19(3)] = 10 × 55 = 550</code>. <em>(2 marks system, 1 mark a &amp; d, 2 marks sum.)</em>
+<strong>(b)</strong> <code>S₈ = 5(2⁸ − 1)/(2 − 1) = 5 × 255 = 1275</code>. <em>(3 marks.)</em></p>
+<p><strong>Q25 (main).</strong>
+<strong>(a)</strong> LHS = <code>(cos A cos B − sin A sin B)(cos A cos B + sin A sin B) = cos²A cos²B − sin²A sin²B</code>. Sub <code>cos²B = 1 − sin²B</code>, <code>sin²A = 1 − cos²A</code> → <code>cos²A − sin²B</code>. <em>(2 marks expand, 2 marks simplify.)</em>
+<strong>(b)</strong> <code>sin 3A = sin(2A + A) = sin 2A cos A + cos 2A sin A = 2 sin A cos²A + (1 − 2sin²A) sin A = 2 sin A (1 − sin²A) + sin A − 2 sin³A = 3 sin A − 4 sin³A</code>. <em>(2 marks expansion, 2 marks substitution.)</em></p>
+<p><strong>Q26 (main).</strong>
+<strong>(a)</strong> <code>s = (13+14+15)/2 = 21</code>. <code>Area = √(21 · 8 · 7 · 6) = √7056 = 84 cm²</code>. <code>r = Area/s = 84/21 = 4 cm</code>. <code>R = abc/(4·Area) = 13·14·15/(4·84) = 2730/336 ≈ 8.125 cm</code>. <em>(2 marks Heron, 2 marks each for r and R.)</em>
+<strong>(b)</strong> <code>tan x = √3 → x = π/3, 4π/3</code>. <em>(2 marks setup, 1 mark both values.)</em></p>
+<hr>
+<h3>Marking summary</h3>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Allotted</th>
+<th>Earned (this key)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A — MCQs</td>
+<td>20</td>
+<td>20</td>
+</tr>
+<tr>
+<td>B — SRQ × 10</td>
+<td>40</td>
+<td>40</td>
+</tr>
+<tr>
+<td>C — LRQ × 5</td>
+<td>40</td>
+<td>40</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>100</strong></td>
+<td><strong>100</strong></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
